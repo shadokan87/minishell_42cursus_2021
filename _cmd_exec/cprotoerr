@@ -1,0 +1,160 @@
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/sys/resource.h:441: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/sys/resource.h:447: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/sys/wait.h:248: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/sys/wait.h:249: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/sys/wait.h:251: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:142: syntax error at token '__compar'
+Expected: ')'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:161: syntax error at token '__compar'
+Expected: ')'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:165: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:166: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:190: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:227: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:231: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:237: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:239: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:252: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:276: bad character '^'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:278: bad character '^'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:278: syntax error at token '__compar'
+Expected: ')'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:293: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:302: syntax error at token '__compar'
+Expected: ')'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:305: bad character '^'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:305: syntax error at token '__compar'
+Expected: ')'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:308: syntax error at token '__compar'
+Expected: ')'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:311: bad character '^'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:311: syntax error at token '__compar'
+Expected: ')'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:314: syntax error at token '__compar'
+Expected: ')'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:317: bad character '^'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:317: syntax error at token '__compar'
+Expected: ')'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:320: syntax error at token '__compar'
+Expected: ')'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:323: bad character '^'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:323: syntax error at token '__compar'
+Expected: ')'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:326: syntax error at token '__compar'
+Expected: ')'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:436: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:467: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:471: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:480: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:488: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:495: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:506: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:508: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:549: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:570: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:572: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:574: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:576: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:578: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:591: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:596: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:598: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:604: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:608: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/sys/select.h:121: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/sys/_select.h:45: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:722: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:727: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:754: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:755: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdio.h:153: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdio.h:157: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdio.h:160: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdio.h:165: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdio.h:214: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdio.h:236: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/stdio.h:308: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/sys/fcntl.h:514: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/sys/fcntl.h:516: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/sys/fcntl.h:518: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/sys/fcntl.h:519: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/string.h:81: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/dirent.h:104: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/dirent.h:106: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/dirent.h:108: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/dirent.h:109: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/dirent.h:111: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/dirent.h:113: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/dirent.h:115: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/dirent.h:128: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/dirent.h:130: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/dirent.h:149: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/dirent.h:152: bad character '^'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/dirent.h:152: bad character '^'
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/dirent.h:152: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/dirent.h:169: syntax error at token '__asm'
+Expected: {
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/dirent.h:175: syntax error at token '__asm'
+Expected: {
