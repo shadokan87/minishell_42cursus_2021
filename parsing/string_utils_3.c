@@ -128,11 +128,11 @@ char	*get_cwd()
 
 char	*get_prompt_of(t_msh *msh, char *cwd)
 {
-	char *ret;
-	char *arrow;
-	char *home_path;
-	t_cut_cmd *home;
-	int i;
+	char		*ret;
+	char		*arrow;
+	char		*home_path;
+	t_cut_cmd	*home;
+	int			i;
 
 	i = 0;
 	(void)arrow;
@@ -151,7 +151,7 @@ char	*get_prompt_of(t_msh *msh, char *cwd)
 		ret = ft_strjoin(ret, "/");
 	ret = ft_strrev(ret);
 	ret = ft_strjoin("  ", ft_strjoin(ret, "  "));
-	ret = ft_strjoin(ft_strjoin(ANSI_COLOR_CYAN, ret), ANSI_COLOR_RESET);
+	ret = ft_strjoin(ft_strjoin(ANSI_COLOR_SUCCESS, ret), ANSI_COLOR_RESET);
 	return (ft_strjoin(ret, " "));
 }
 
@@ -163,14 +163,21 @@ int	get_line(t_msh *msh, char *str)
 		curr_path = str;
 	else
 		curr_path = get_prompt_of(msh, get_cwd());
+	if (msh->tools->status != 0)
+		curr_path = ft_strjoin(ft_strjoin(curr_path, ft_strjoin(ft_strjoin(ANSI_COLOR_FAILURE, " X "), ANSI_COLOR_RESET)), " ");
 	msh->jobs->reading_line = readline(curr_path);
-	if (!ft_strncmp(ft_strtrim(msh->jobs->reading_line, "\n"), "", 1))
+	if (is_same(ft_strtrim(msh->jobs->reading_line, "\n"), ""))
 	{
+		msh->tools->status = 0;
 		msh->jobs->reading_line = NULL;
 		return (0);
 	}
 	else
+	{
 		msh->jobs->have_been_read = ft_strdup(msh->jobs->reading_line);
+		add_history(msh->jobs->reading_line);
+		ft_putstr_fd(ft_strjoin(msh->jobs->reading_line, "\n"), msh->tools->history_fd);
+	}
 	return (1);
 }
 
@@ -210,13 +217,27 @@ void	msh_debug(t_msh *msh, char *elem)
 		get_line_info(msh->tools->tail);
 }
 
-void	print_split(char **split)
+void	print_split(char **split, char *way)
 {
 	int i;
+
 	i = 0;
-	while (split[i])
+	if (is_same(way, "rev"))
 	{
-		printf("%s\n", split[i]);
-		i++;
+		while (split[i + 1])
+			i++;
+		while (i > -1)
+		{
+			ft_putstr_fd(ft_strjoin(split[i], "\n"), 1);
+			i--;
+		}
+	}
+	else
+	{
+		while (split[i])
+		{
+			ft_putstr_fd(ft_strjoin(split[i], "\n"), 1);
+			i++;
+		}
 	}
 }

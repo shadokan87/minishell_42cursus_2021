@@ -25,7 +25,6 @@ int	builtin_export(t_msh *msh, t_cut_cmd *cmd)
 				to_print = ft_strjoin(to_print, "=\"");
 				to_print = ft_strjoin(to_print, env_split[1]);
 				to_print = ft_strjoin(to_print, "\"");
-				// ft_putstr_fd("declare -x", msh->tools->fdout);
 				ft_putendl_fd(to_print, msh->tools->fdout);
 			}
 			else
@@ -60,8 +59,9 @@ int	builtin_exit(t_msh *msh, t_cut_cmd *cmd)
 {
 	(void)msh;
 	(void)cmd;
-	// gc("collect -all");
+	gc("collect -all");
 	exit (0);
+	exit(0);
 	return (2);
 }
 
@@ -105,6 +105,7 @@ void	handle_builtins(t_msh *msh, t_cut_cmd *cmd)
 		add_builtin(&f_p_builtin, builtin_exit, size);
 	}
 	index_of_cmd = is_match2(BUILTIN_LIST, ' ', cmd->elem);
-	f_p_builtin[index_of_cmd](msh, cmd);
+	if (index_of_cmd != -1)
+		f_p_builtin[index_of_cmd](msh, cmd);
 	exit (0);
 }

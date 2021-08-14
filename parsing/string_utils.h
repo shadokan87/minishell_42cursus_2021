@@ -7,13 +7,17 @@ void		get_line_info(t_cut_cmd *to_debug);
 
 void		msh_debug(t_msh *msh, char *elem);
 
-void		print_split(char **split);
+void		print_split(char **split, char *way);
 
 void		p_putchar_str(char **str, char c);
 
 void		print_list2(t_cut_cmd *ptr);
 
 void		print_list(t_msh *msh);
+
+char		*trim_right(char *str, char c);
+
+char		*trim_left(char *str, char c);
 
 int			is_symbol(char c);
 
@@ -50,6 +54,10 @@ char		*get_path(t_cut_cmd *cmd, char **paths);
 char		*n_dup(char *str, int start, int end);
 
 char		*str_modulo(char *src, char **modulo, int inc);
+
+char		**keep_split(t_msh *msh, char *str, char sep, t_TOKEN _TOKEN);
+
+int			list_len(t_cut_cmd *list);
 
 t_cut_cmd	*fill(char *elem, t_TOKEN TOKEN);
 

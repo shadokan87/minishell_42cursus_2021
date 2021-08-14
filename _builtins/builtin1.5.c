@@ -20,7 +20,7 @@ int	check_option(t_msh *msh, t_cut_cmd *cmd)
 			str = ft_strdup("bash: export: ");
 			str = ft_strjoin(str, tmp);
 			str = ft_strjoin(str, ": invalid option\nexport: usage: export [no option] [name[=value] ...]\n");
-			ft_error(msh, cmd, str, 2);
+			append_error(msh, cmd, str, msh->tools->status);
 			return (ERROR);
 		}
 		quote = 0;
@@ -49,11 +49,11 @@ int	check_export(t_msh *msh, t_cut_cmd *cmd)
 	{
 		if (!ft_isalpha(str[i]) && str[i] != '_')
 		{
-			error = ft_strdup("Minishell: export: \'");
+			error = ft_strdup("export: \'");
 			error = ft_strjoin(error, str);
 			error = ft_strjoin(error, "\': not a valid identifier\n");
 			msh->tools->noforked_exit = 1;
-			ft_error(msh, cmd, error, 1);
+			append_error(msh, cmd, error, msh->tools->status);
 			return (ERROR);
 		}
 	}

@@ -1,0 +1,16 @@
+Makefile
+_IO
+_builtins
+_cmd_exec
+_env
+_wildcards
+error
+fie
+includes
+init
+libft
+minishell
+norm.res
+parsing
+srcs
+tags

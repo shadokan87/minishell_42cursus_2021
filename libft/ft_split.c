@@ -6,7 +6,7 @@
 /*   By: motoure <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 13:11:46 by motoure           #+#    #+#             */
-/*   Updated: 2021/08/01 00:56:24 by motoure          ###   ########.fr       */
+/*   Updated: 2021/08/12 01:05:23 by motoure          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,15 @@ static int	words_count(char const *s, char c)
 	return (count);
 }
 
-static char	**ft_free(char **tab, int i)
+static char	**ft_free(char **arr, int i)
 {
 	while (--i)
 	{
-		gc_free(tab[i]);
-		tab[i] = 0;
+		gc_free(arr[i]);
+		arr[i] = 0;
 	}
-	gc_free(tab);
-	tab = 0;
+	gc_free(arr);
+	arr = 0;
 	return (NULL);
 }
 
@@ -93,26 +93,26 @@ char		**ft_split(char const *s, char c)
 {
 	int		i;
 	int		*words_len;
-	char	**tab;
+	char	**arr;
 	int		y;
 
 	if (!s || (!(words_len = ewl(s, c))))
 		return (0);
 	i = 0;
 	y = 0;
-	if ((!(tab = gc_malloc(sizeof(char *) * words_count(s, c) + 1))))
+	if ((!(arr = gc_malloc(sizeof(char *) * words_count(s, c) + 1))))
 		return (0);
 	while (i < words_count(s, c))
 	{
-		if (!(tab[i] = gc_malloc(sizeof(char) * words_len[i] + 1)))
-			return (ft_free(tab, i));
+		if (!(arr[i] = gc_malloc(sizeof(char) * words_len[i] + 1)))
+			return (ft_free(arr, i));
 		while (s[y] == c && s[y])
 			y++;
-		cpy_from_till(s, tab[i], y, words_len[i]);
+		cpy_from_till(s, arr[i], y, words_len[i]);
 		while (s[y] && s[y] != c)
 			y++;
 		i++;
 	}
-	tab[i] = NULL;
-	return (tab);
+	arr[i] = NULL;
+	return (arr);
 }

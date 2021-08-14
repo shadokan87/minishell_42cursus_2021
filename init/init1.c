@@ -5,10 +5,15 @@ void	init_jobs(t_msh **msh)
 {
 	(*msh)->jobs = (t_job *)malloc(sizeof(t_job));
 	if (!(*msh)->jobs)
-		ft_error(*msh, NULL, "Cannot allocate memory\n", 0);
+		handler(0);
 	(*msh)->jobs->reading_line = NULL;
 	(*msh)->jobs->have_been_read = NULL;
 	(*msh)->jobs->prompt_status = 0;
+}
+
+static	void	init_tools2(t_msh *msh)
+{
+	msh->tools->history_fd = -1;
 }
 
 /*where is tmp node ? */
@@ -16,7 +21,7 @@ void	init_tools(t_msh *msh)
 {
 	msh->tools = gc_malloc(sizeof(t_tools));
 	if (!msh->tools)
-		exit (0);
+		handler(0);
 	msh->tools->tmp_node = 0;
 	msh->tools->b_stdout = 0;
 	msh->tools->head = NULL;
@@ -36,7 +41,9 @@ void	init_tools(t_msh *msh)
 	msh->tools->noforked_exit = 0;
 	msh->tools->error_msg = NULL;
 	msh->tools->marker = NULL;
+	msh->tools->errors = NULL;
 	msh->envp = NULL;
+	init_tools2(msh);
 }
 
 /* BECAREFULL TO CHANGE THE MALLOC TO GC OR CALLOC ! */

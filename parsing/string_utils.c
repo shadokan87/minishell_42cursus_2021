@@ -44,17 +44,19 @@ void	p_putchar_str(char **str, char c)
 	*str = tmp;
 }
 
-t_cut_cmd	*fill(char *elem, t_TOKEN TOKEN)
+t_cut_cmd		*fill(char *elem, t_TOKEN TOKEN)
 {
-	t_cut_cmd	*ret;
-	int			i;
+	t_cut_cmd *ret;
+	int i;
 
 	i = -1;
-	ret = (t_cut_cmd *)gc_malloc(sizeof(t_cut_cmd));
-	if (!ret)
+	if (!(ret = (t_cut_cmd*)gc_malloc(sizeof(t_cut_cmd))))
 		return (0);
-	ret->elem = ft_strdup(elem);
 	ret->is_last = 0;
+	ret->wild_card_type = -1;
+	ret->tail_wild_card = NULL;
+	ret->head_wild_card = NULL;
+	ret->elem = ft_strdup(elem);
 	ret->TOKEN = TOKEN;
 	ret->n = NULL;
 	ret->p = NULL;

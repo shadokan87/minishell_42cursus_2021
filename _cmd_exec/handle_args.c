@@ -57,30 +57,61 @@ int	choose_args(t_msh *msh)
 }
 
 /*args = (char**)gc_malloc(sizeof(char*) * (ret + 1)); */
-char	**handle_args2(t_cut_cmd *cmd)
+
+void	inc_ret(t_cut_cmd *cmd, int *ret)
 {
-	t_cut_cmd	*tail;
-	char		**args;
+	(void)cmd;
+	if (cmd->TOKEN == WILD_CARD && cmd->tail_wild_card)
+		*ret += list_len(cmd->tail_wild_card);
+	else
+		*ret += 1;
+}
+
+int	strdup_wildcard_or_elem(t_cut_cmd *tail, char ***args, int i)
+{
+	t_cut_cmd	*iterator;
+
+	if (tail->TOKEN == WILD_CARD && tail->tail_wild_card)
+	{
+		iterator = tail->tail_wild_card;
+		while (iterator)
+		{	
+			(*args)[i] = ft_strdup(iterator->elem);
+			iterator = iterator->p;
+			i++;
+		}
+		return (list_len(tail->tail_wild_card));
+	}
+	(*args)[i] = ft_strdup(tail->elem);
+	return (1);
+}
+
+char			**handle_args2(t_cut_cmd *cmd)
+{
 	int			ret;
 	int			i;
+	t_cut_cmd	*tail;
+	char 		**args;
 
-	tail = cmd;
 	ret = 0;
-	i = -1;
+	i = 0;
+	tail = cmd;
+	if (!cmd)
+		return (NULL);
 	while (cmd && (cmd->TOKEN == C_ENV || cmd->TOKEN == C_BUILTIN
-			|| cmd->TOKEN == ARG || cmd->TOKEN == OPTION))
+	|| cmd->TOKEN == ARG || cmd->TOKEN == OPTION || cmd->TOKEN == WILD_CARD))
 	{
-		ret++;
+		inc_ret(cmd, &ret);
 		cmd = cmd->p;
 	}
-	args = (char **)ft_calloc((ret + 1), sizeof(char *) * (ret + 1));
-	while (tail && (tail->TOKEN == C_ENV || tail->TOKEN == C_BUILTIN
-			|| tail->TOKEN == ARG || tail->TOKEN == OPTION))
+	args = ft_calloc((ret + 1), sizeof(char*) * (ret + 1));
+	while (tail && (tail->TOKEN == C_ENV || tail->TOKEN == C_BUILTIN || tail->TOKEN == ARG || tail->TOKEN == OPTION || tail->TOKEN == WILD_CARD))
 	{
-		args[++i] = ft_strdup(tail->elem);
+		ret = strdup_wildcard_or_elem(tail, &args, i);
 		tail = tail->p;
+		i += ret;
 	}
-	args[++i] = NULL;
+	args[i] = NULL;
 	return (args);
 }
 

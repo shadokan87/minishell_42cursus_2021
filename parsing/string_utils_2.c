@@ -79,7 +79,7 @@ int	is_match2(char *list, char sep, char *elem)
 	split = ft_split(list, sep);
 	while (split[i])
 	{
-		if (!ft_strncmp(split[i], elem, ft_strlen(elem)))
+		if (is_same(split[i], elem))
 			return (i);
 		i++;
 	}

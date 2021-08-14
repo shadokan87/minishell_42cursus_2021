@@ -18,7 +18,7 @@ static void	double_left(t_msh *msh, t_cut_cmd *cmd)
 	msh->tools->tmpfd = open("./msh_heredoc.msh",
 			O_RDWR | O_CREAT | O_TRUNC, 0666);
 	if (msh->tools->tmpfd < 0)
-		ft_error(msh, cmd, NULL, errno);
+		append_error(msh, cmd, NULL, errno);
 	while ((get_line(msh, "> ") >= 0)
 		&& (ft_strncmp(msh->tools->marker, msh->jobs->have_been_read,
 				(size_t)ft_strlen(msh->jobs->have_been_read))))
@@ -37,7 +37,7 @@ int	input_redirection(t_msh *msh, t_cut_cmd *cmd)
 			{
 				msh->tools->fdin = open(cmd->elem, O_RDWR, NULL);
 				if (msh->tools->fdin < 0)
-					ft_error(msh, cmd, NULL, errno);
+					append_error(msh, cmd, NULL, errno);
 				msh->tools->istmp = 0;
 				dup2(msh->tools->fdin, 0);
 			}

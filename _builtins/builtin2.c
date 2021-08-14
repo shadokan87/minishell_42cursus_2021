@@ -48,15 +48,18 @@ int	builtin_echo(t_msh *msh, t_cut_cmd *cmd)
 
 int	builtin_cd(t_msh *msh, t_cut_cmd *cmd)
 {
-	if ((!cmd->p) || !(cmd->p->TOKEN == ARG
-			|| cmd->p->TOKEN == D_QUOTE || cmd->p->TOKEN == S_QUOTE
-			|| cmd->p->TOKEN == OPTION))
-	{
-		msh->tools->error_msg = ft_strdup("usage: cd [path]");
-		return ((msh->tools->status = 0));
-	}
+	return (append_error(msh, cmd, "cd: usage: [path]\n", 1));
+	(void)msh;
+	(void)cmd;
+	if ((!cmd->p) ||
+	!(cmd->p->TOKEN == ARG ||
+	cmd->p->TOKEN == D_QUOTE ||
+	cmd->p->TOKEN == S_QUOTE ||
+	cmd->p->TOKEN == OPTION))
+		return (append_error(msh, cmd, "cd: usage: [path]\n", 1));
 	return ((msh->tools->status = chdir((const char *)cmd->p->elem) == -1));
 }
+
 
 int	builtin_pwd(t_msh *msh, t_cut_cmd *cmd)
 {

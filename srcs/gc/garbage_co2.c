@@ -50,15 +50,15 @@ void	gc(char *instr)
 {
 	if (!g_gc)
 		gc_init();
-	if (!ft_strncmp(instr, "pause", ft_strlen(instr)))
+	if (is_same(instr, "pause"))
 		g_gc->dst = 1;
-	else if (!ft_strncmp(instr, "resume", ft_strlen(instr)))
+	else if (is_same(instr, "resume"))
 		g_gc->dst = 0;
-	else if (!ft_strncmp(instr, "collect", ft_strlen(instr)))
+	else if (is_same(instr, "collect"))
 		collect(0);
-	else if (!ft_strncmp(instr, "collect -mute", ft_strlen(instr)))
+	else if (is_same(instr, "collect -mute"))
 		collect(1);
-	else if (!ft_strncmp(instr, "collect -all", ft_strlen(instr)))
+	else if (is_same(instr, "collect -all"))
 		collect(2);
 	else
 	{

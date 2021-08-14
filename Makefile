@@ -24,6 +24,7 @@ SRCS	=	./srcs/main/main.c \
 			./parsing/string_utils_2.c \
 			./parsing/string_utils_3.c \
 			./parsing/string_utils_4.c \
+			./parsing/string_utils_5.c \
 			./init/init1.c \
 			./parsing/parsing_pass2/parsing_p_p_token.c \
 			./_IO/handle_redirection.c \

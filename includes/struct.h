@@ -6,7 +6,7 @@
 /*   By: tidminta <tidminta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:33:58 by tidminta          #+#    #+#             */
-/*   Updated: 2021/08/11 22:28:47 by motoure          ###   ########.fr       */
+/*   Updated: 2021/08/12 03:23:00 by motoure          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ typedef struct s_tools
 	int			tmp_status;
 	int			pipe[2];
 	int			noforked_exit;
+	int			history_fd;
 	char		*error_msg;
 	char		*marker;
 }				t_tools;

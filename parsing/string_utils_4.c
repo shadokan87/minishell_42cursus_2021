@@ -1,21 +1,5 @@
 #include "../includes/libshell.h"
 
-int	list_len(t_cut_cmd *list)
-{
-	int			i;
-	t_cut_cmd	*iterator;
-
-	i = 0;
-	if (!list)
-		return (0);
-	iterator = list;
-	while (iterator)
-	{
-		iterator = iterator->p;
-		i++;
-	}
-	return (i);
-}
 int	split_len(char **split)
 {
 	int i;

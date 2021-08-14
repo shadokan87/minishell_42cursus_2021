@@ -6,12 +6,13 @@
 /*   By: tidminta <tidminta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:52:06 by tidminta          #+#    #+#             */
-/*   Updated: 2021/08/11 23:42:08 by motoure          ###   ########.fr       */
+/*   Updated: 2021/08/12 04:24:35 by motoure          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIB_SHELL_H
 # define LIB_SHELL_H
+# define $MSG(x) ft_putstr_fd(x, 1);
 
 /*
 **
@@ -30,12 +31,12 @@
 # define $ZERO '\0'
 # define $PRINT(x, y) printf(x, y); 
 
-# define ANSI_COLOR_RED     "\x1b[31m"
+# define ANSI_COLOR_FAILURE     "\033[41;1m"
 # define ANSI_COLOR_GREEN   "\x1b[32m"
 # define ANSI_COLOR_YELLOW  "\x1b[33m"
 # define ANSI_COLOR_BLUE    "\x1b[34m"
 # define ANSI_COLOR_MAGENTA "\x1b[35m"
-# define ANSI_COLOR_CYAN    "\033[45;1m"
+# define ANSI_COLOR_SUCCESS  "\033[45;1m"
 # define ANSI_COLOR_RESET   "\x1b[0m"
 
 /*
@@ -45,6 +46,12 @@
 # define SYMBOL_LIST ">:<:|:&"
 # define SYMBOL_DETERMINE "| > >> < << || && ( )"
 # define BUILTIN_LIST "echo cd pwd env export unset exit"
+
+
+# define W_START_WITH 0
+# define W_CONTAIN 1
+# define W_END_WITH 2
+# define W_ALL 3
 
 /*
 ** ERROR_MSG
@@ -74,5 +81,9 @@
 # include "../parsing/parsing_pass2/parsing_pass2.h"
 # include "../libft/libft.h"
 # include "../_wildcards/wildcards.h"
+# include <term.h>
+# include <termios.h>
+struct termios canon;
+struct termios orig;
 t_cut_cmd	**head_tail(t_msh *msh, char *mode);
 #endif

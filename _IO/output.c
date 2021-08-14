@@ -22,14 +22,14 @@ int	output_redirection(t_msh *msh, t_cut_cmd *cmd)
 			{
 				msh->tools->fdout = open(cmd->elem, O_RDWR | O_CREAT, 0666);
 				if (msh->tools->fdout < 0)
-					ft_error(msh, cmd, NULL, errno);
+					append_error(msh, cmd, NULL, errno);
 			}
 			else if (cmd->TOKEN == ARG && cmd->n->TOKEN == D_R_REDIR)
 			{
 				msh->tools->fdout
 					= open(cmd->elem, O_RDWR | O_CREAT | O_APPEND, 0666);
 				if (msh->tools->fdout < 0)
-					ft_error(msh, cmd, NULL, errno);
+					append_error(msh, cmd, NULL, errno);
 			}
 			cmd = cmd->p;
 		}

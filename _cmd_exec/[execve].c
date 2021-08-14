@@ -44,20 +44,6 @@ char	*determine_path_type(t_cut_cmd *cmd, char *str)
 	return (ft_strrev(str));
 }
 
-void	ft_list_join(t_cut_cmd **left, t_cut_cmd *start, t_cut_cmd *right)
-{
-	t_cut_cmd	*iterator;
-
-	(void)left;
-	(void)start;
-	(void)right;
-	iterator = (*left);
-	while ((iterator) && (iterator)->p
-		&& (iterator->p) != start && (iterator) != start)
-		(iterator) = (iterator)->p;
-	(iterator)->p = right;
-}
-
 t_cut_cmd	**head_tail(t_msh *msh, char *mode)
 {
 	static t_cut_cmd	**bak;
@@ -79,19 +65,7 @@ t_cut_cmd	**head_tail(t_msh *msh, char *mode)
 	{
 		msh->tools->head = bak[0];
 		msh->tools->tail = bak[1];
-		gc_free(bak);
 		bak = NULL;
 	}
 	return (bak);
 }
-
-// void			_place_holder_handle_wildcards(t_msh *msh, t_cut_cmd *cmd)
-// {
-// 	(void)cmd;
-// 	(void)msh;
-// 	t_cut_cmd *iterator;
-
-// 	iterator = cmd;
-// 	printf("ok %s", iterator->p->elem);
-// 	$BR
-// }
