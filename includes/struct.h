@@ -6,7 +6,7 @@
 /*   By: tidminta <tidminta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:33:58 by tidminta          #+#    #+#             */
-/*   Updated: 2021/08/12 03:23:00 by motoure          ###   ########.fr       */
+/*   Updated: 2021/08/14 05:37:24 by motoure          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,10 @@ typedef struct s_cut_cmd
 	char				*elem;
 	int					is_last;
 	int					wild_card_type;
-	struct s_cut_cmd	*n;
-	struct s_cut_cmd	*p;
-	struct		s_cut_cmd *	tail_wild_card;
-	struct		s_cut_cmd *	head_wild_card;
+	struct s_cut_cmd *	n;
+	struct s_cut_cmd *	p;
+	struct s_cut_cmd *	tail_wild_card;
+	struct s_cut_cmd *	head_wild_card;
 }						t_cut_cmd;
 
 typedef struct s_env_list

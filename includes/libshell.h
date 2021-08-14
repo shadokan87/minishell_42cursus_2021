@@ -6,7 +6,7 @@
 /*   By: tidminta <tidminta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:52:06 by tidminta          #+#    #+#             */
-/*   Updated: 2021/08/12 04:24:35 by motoure          ###   ########.fr       */
+/*   Updated: 2021/08/14 06:05:35 by motoure          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@
 # define $ENDL printf("\n");
 # define $MARK(x) printf("MARK: ");printf(x);printf("\n");
 # define $ZERO '\0'
-# define $PRINT(x, y) printf(x, y); 
+# define $PRINT(x, y) printf(x, y);
+
+#define $EMPTY_STRING ""
 
 # define ANSI_COLOR_FAILURE     "\033[41;1m"
 # define ANSI_COLOR_GREEN   "\x1b[32m"

@@ -32,7 +32,7 @@ int	get_dollar_end(char *dollar)
 	i = 1;
 	while ((dollar[i]))
 	{
-		if (dollar[i] == '$')
+		if (dollar[i] == '$' && !(dollar[i + 1] && dollar[i + 1] == '$'))
 			return (i);
 		else if (!ft_isalnum(dollar[i]) && dollar[i] != '_')
 			break ;
@@ -59,42 +59,70 @@ char	*get_val_from_var(t_cut_cmd *var)
 	return (NULL);
 }
 
+void	_dollar_handle_append_failure(t_msh *msh, t_cut_cmd *iterator, char **current_write, char **elem_ptr)
+{
+	(void)msh;
+	(void)iterator;
+	(void)current_write;
+	(void)elem_ptr;
+
+	if (!current_write)
+		*elem_ptr = ft_strdup($EMPTY_STRING);
+	//else if (!ft_strchr(*elem_ptr, '$'))
+	//	*current_write = ft_strjoin(*current_write, *elem_ptr);
+	//{
+	//	$MSG("\nFAIL\n")
+	//	$MSG(*elem_ptr)
+	//	$MSG("\nFAIL\n")
+	//	$BR
+//	}
+		//*elem_ptr = iterator->elem + get_dollar_end(iterator->elem);
+}
+
+void	_dollar_append_if_valid(t_msh *msh, t_cut_cmd *iterator, char **current_write, char **elem_ptr)
+{
+	char	*found;
+	char	*dollar;
+
+	found = NULL;
+	dollar = NULL;
+	dollar = ft_strtrim(ft_strndup(iterator->elem, get_dollar_end(iterator->elem)), "$");
+	*elem_ptr = iterator->elem + get_dollar_end(iterator->elem);
+	found = get_val_from_var(get_env_of(msh->envp, dollar));
+	if (!found)
+		_dollar_handle_append_failure(msh, iterator, current_write, elem_ptr);
+	else if (*current_write)
+		*current_write = ft_strjoin(*current_write, found);
+	else
+		*current_write = ft_strdup(found);
+}
+
 void	_place_holder_handle_expand_env(t_msh *msh, t_cut_cmd *cmd)
 {
 	t_cut_cmd	*iterator;
 	char		*current_write;
-	char		*dollar;
-	char		*found;
 	int			i;
 	(void)msh;
 
 	i = 0;
 	current_write = NULL;
-	dollar = NULL;
-	iterator = cmd->p;
-	while (*iterator->elem)
+	iterator = cmd;
+	while (iterator)
 	{
-		if (*iterator->elem == '$')
+		while (*iterator->elem)
 		{
-			dollar = ft_strtrim(ft_strndup(iterator->elem, get_dollar_end(iterator->elem)), "$");
-			iterator->elem += get_dollar_end(iterator->elem);
-			found = get_val_from_var(get_env_of(msh->envp, dollar));
-			if (current_write)
-				current_write = ft_strjoin(current_write, found);
-			else
-				current_write = ft_strdup(found);
-			printf("$ELEM[%s]\n$CURR[%s]", iterator->elem, current_write);
+			if (*iterator->elem == '$')
+				_dollar_append_if_valid(msh, iterator, &current_write, &iterator->elem);
+			if (!(*iterator->elem == '$'))
+			{
+				p_putchar_str(&current_write, *iterator->elem);
+				iterator->elem++;
+			}
 		}
-		if (!(*iterator->elem == '$'))
-		{
-			p_putchar_str(&current_write, *iterator->elem);
-			iterator->elem++;
-		}
+		iterator->elem = current_write;
+		current_write = NULL;
+		iterator = iterator->p;
 	}
-	iterator->elem = current_write;
-	current_write = NULL;
-	printf("\n$FINAL[%s]\n", iterator->elem);
-	$BR
 }
 
 char	*_place_holder_get_path(t_msh *msh, t_cut_cmd *cmd)
