@@ -1,30 +1,5 @@
 #include "../includes/libshell.h"
 
-char	*chr_or_zero(char *str, char c)
-{
-	char *chr;
-
-	chr = ft_strchr(str, c);
-	if (!chr)
-		return (str + ft_strlen(str));
-	return (chr);
-}
-
-void	strreduce_range(char **str, char *end)
-{
-	(void)end;
-	char *ptr;
-
-	ptr = *str;
-	ptr = ft_strrev(ptr);
-	printf("$END[%c]", *end);
-	while (&(*ptr) != end + 3)
-		ptr++;
-	ptr = ft_strrev(ptr);
-	printf("[%s]", ptr);
-	$BR
-}
-
 int	get_dollar_end(char *dollar)
 {
 	int i;
@@ -68,15 +43,6 @@ void	_dollar_handle_append_failure(t_msh *msh, t_cut_cmd *iterator, char **curre
 
 	if (!current_write)
 		*elem_ptr = ft_strdup($EMPTY_STRING);
-	//else if (!ft_strchr(*elem_ptr, '$'))
-	//	*current_write = ft_strjoin(*current_write, *elem_ptr);
-	//{
-	//	$MSG("\nFAIL\n")
-	//	$MSG(*elem_ptr)
-	//	$MSG("\nFAIL\n")
-	//	$BR
-//	}
-		//*elem_ptr = iterator->elem + get_dollar_end(iterator->elem);
 }
 
 void	_dollar_append_if_valid(t_msh *msh, t_cut_cmd *iterator, char **current_write, char **elem_ptr)

@@ -48,13 +48,6 @@ void	init_pos(t_cut_cmd *tail, t_cut_cmd **pos)
 		(*pos) = tail;
 }
 
-/*
-	move_pos(msh, &pos);
-	if (((pos) && (catch_and(msh, &pos) || catch_or(msh, &pos))))
-		return (handle_cmd(msh, pos));
-	if ((pos) && goto_next_div(msh, &pos))
-		return (handle_cmd(msh, pos));
-*/
 int	handle_cmd(t_msh *msh, t_cut_cmd *pos)
 {
 	msh->tools->tail = pos;
