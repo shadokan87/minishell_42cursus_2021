@@ -36,5 +36,9 @@ void	print_alpha_export(t_msh *msh, t_cut_cmd *cmd);
 
 void	ft_open(int *ret, int fd);
 
+char	*flag(char *instr);
+
+void	print_list_msg(t_cut_cmd *print, char *message);
+
 t_cut_cmd	*ft_ls(char *path, char *options);
 #endif

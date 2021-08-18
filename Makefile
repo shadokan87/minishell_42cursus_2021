@@ -42,6 +42,7 @@ SRCS	=	./srcs/main/main.c \
 			./_builtins/builtin1.5.c \
 			./_builtins/builtin2.c \
 			./_builtins/builtin3.c \
+			./_builtins/ft_internal.c \
 			./_builtins/random_utils1.c \
 			./_wildcards/handle_wildcards.c \
 			./_wildcards/match.c \

@@ -92,6 +92,13 @@ int			goto_next_div(t_msh *msh, t_cut_cmd **pos)
 	return (1);
 }
 
+t_cut_cmd	*get_next_token_scope(t_cut_cmd *pos, t_elem TOKEN)
+{
+	t_cut_cmd *iterator;
+
+	iterator = pos;
+}
+
 int         handle_cmd(t_msh *msh, t_cut_cmd *pos)
 {
 	write_error(msh);
