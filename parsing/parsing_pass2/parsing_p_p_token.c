@@ -40,6 +40,38 @@ t_TOKEN	p_p_determine_cmd(char *elem, int cmd_re_eval)
 	return (C_ENV);
 }
 
+int	check_exception(t_cut_cmd **tail)
+{
+	t_cut_cmd *iterator;
+
+	iterator = (*tail);
+	while (iterator)
+	{
+		if (iterator->TOKEN == R_REDIR && (iterator->n && iterator->n->TOKEN == CLOSED_DIV))
+		{
+			while (iterator)
+			{
+				if (iterator->TOKEN == AND || iterator->TOKEN == OR ||
+					iterator->TOKEN == CLOSED_DIV ||
+					iterator->TOKEN == OPEN_DIV)
+				{
+					if (iterator->TOKEN == OPEN_DIV)
+						iterator->p->fd_flag = O_TRUNC;
+					break ;
+				}
+				if (iterator->TOKEN == R_REDIR)
+					iterator->TOKEN = D_R_REDIR;
+				iterator = iterator->p;
+			}
+			if (iterator)
+				return (check_exception(tail));
+			return (1);
+		}
+		iterator = iterator->p;
+	}
+	return (1);
+}
+
 int	p_p_determine_token(t_msh *msh)
 {
 	t_cut_cmd	*iter;
@@ -64,5 +96,5 @@ int	p_p_determine_token(t_msh *msh)
 		}
 		iter = iter->p;
 	}
-	return ((msh->tools->error_msg == NULL));
+	return (check_exception(&msh->tools->tail));
 }

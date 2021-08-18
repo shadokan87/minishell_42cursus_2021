@@ -60,6 +60,7 @@ t_cut_cmd		*fill(char *elem, t_TOKEN TOKEN)
 	ret->TOKEN = TOKEN;
 	ret->n = NULL;
 	ret->p = NULL;
+	ret->fd_flag = 0;
 	return (ret);
 }
 

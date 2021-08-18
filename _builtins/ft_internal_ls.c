@@ -6,7 +6,7 @@
 /*   By: motoure <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 22:32:13 by motoure           #+#    #+#             */
-/*   Updated: 2021/08/11 22:10:32 by motoure          ###   ########.fr       */
+/*   Updated: 2021/08/18 12:15:50 by motoure          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@ static int	ft_readdir(struct dirent **de, DIR *dr)
 {
 	*de = readdir(dr);
 	return ((*de != NULL));
+}
+
+void	ft_open(int *ret, int fd)
+{
+	if (*ret != -1 && *ret != 0 && *ret != 1)
+		close(*ret);
+	if (fd != -1)
+		*ret = fd;
 }
 
 t_cut_cmd	*ft_ls(char *path, char *options)

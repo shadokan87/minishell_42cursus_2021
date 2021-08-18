@@ -1,4 +1,5 @@
 #include "../../includes/libshell.h"
+#define $PRINT_LIST(x) t_cut_cmd *iterator;iterator = x;while(iterator){ft_putstr_fd(iterator->elem, 1);ft_putstr_fd("\n", 1);iterator = iterator->p;}
 
 void	ispipe(t_msh *msh)
 {
@@ -21,6 +22,8 @@ int	getnext_pipe(t_cut_cmd **cmd)
 	while ((*(cmd)) != NULL && (*(cmd))->TOKEN != PIPE)
 		(*(cmd)) = (*(cmd))->p;
 	if ((*(cmd)) != NULL)
+		(*(cmd)) = (*(cmd))->p;
+	while ((*cmd)!= NULL && (*cmd)->TOKEN == OPEN_DIV)
 		(*(cmd)) = (*(cmd))->p;
 	if ((*(cmd)))
 		return (SUCCESS);

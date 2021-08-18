@@ -1,0 +1,25 @@
+total 264
+drwxr-xr-x   24 motoure  2019_paris    816 Aug 17 22:59 .
+drwxr-xr-x  135 motoure  2019_paris   4658 Aug 17 22:51 ..
+drwxr-xr-x   12 motoure  2019_paris    408 Aug 17 22:21 .git
+-rw-r--r--    1 motoure  2019_paris   1694 Aug 16 03:09 Makefile
+drwxr-xr-x   16 motoure  2019_paris    544 Aug 17 22:58 _IO
+drwxr-xr-x   14 motoure  2019_paris    476 Aug 17 22:21 _builtins
+drwxr-xr-x   16 motoure  2019_paris    544 Aug 17 22:21 _cmd_exec
+drwxr-xr-x    5 motoure  2019_paris    170 Aug 17 22:21 _env
+drwxr-xr-x   13 motoure  2019_paris    442 Aug 17 22:21 _wildcards
+drwxr-xr-x    5 motoure  2019_paris    170 Aug 17 22:21 error
+-rw-r--r--    1 motoure  2019_paris    136 Aug 17 22:59 file
+-rw-r--r--    1 motoure  2019_paris      6 Aug 17 15:51 hide
+drwxr-xr-x    6 motoure  2019_paris    204 Aug 14 23:31 includes
+drwxr-xr-x    5 motoure  2019_paris    170 Aug 17 22:21 init
+-rw-r--r--    1 motoure  2019_paris   1919 Aug 17 19:38 last
+drwxr-xr-x   84 motoure  2019_paris   2856 Aug 17 22:21 libft
+-rwxr-xr-x    1 motoure  2019_paris  77596 Aug 17 22:58 minishell
+-rw-r--r--    1 motoure  2019_paris   5223 Aug 11 22:01 norm.res
+drwxr-xr-x   16 motoure  2019_paris    544 Aug 17 22:21 parsing
+-rw-r--r--    1 motoure  2019_paris    125 Aug 14 23:24 res
+-rw-r--r--    1 motoure  2019_paris      0 Aug 17 22:59 res1
+-rw-r--r--    1 motoure  2019_paris      0 Aug 17 10:46 res2
+drwxr-xr-x    4 motoure  2019_paris    136 Aug 11 23:41 srcs
+-rw-------    1 motoure  2019_paris  28587 Aug 17 19:15 tags

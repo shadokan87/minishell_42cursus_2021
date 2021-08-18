@@ -1,0 +1,50 @@
+Makefile
+_IO
+_builtins
+_cmd_exec
+_env
+_wildcards
+error
+file1
+file2
+hide
+ilfe
+includes
+init
+last
+libft
+norm.res
+parsing
+res
+res1
+res2
+srcs
+tags
+test
+total 152
+drwxr-xr-x   26 motoure  2019_paris    884 Aug 18 20:24 .
+drwxr-xr-x  134 motoure  2019_paris   4624 Aug 18 20:23 ..
+drwxr-xr-x   12 motoure  2019_paris    408 Aug 18 20:14 .git
+-rw-r--r--    1 motoure  2019_paris   1693 Aug 18 20:16 Makefile
+drwxr-xr-x   12 motoure  2019_paris    408 Aug 18 18:14 _IO
+drwxr-xr-x   15 motoure  2019_paris    510 Aug 18 15:38 _builtins
+drwxr-xr-x   17 motoure  2019_paris    578 Aug 18 20:22 _cmd_exec
+drwxr-xr-x    5 motoure  2019_paris    170 Aug 18 15:38 _env
+drwxr-xr-x   13 motoure  2019_paris    442 Aug 18 15:38 _wildcards
+drwxr-xr-x    5 motoure  2019_paris    170 Aug 18 15:38 error
+-rw-r--r--    1 motoure  2019_paris    148 Aug 18 20:24 file1
+-rw-r--r--    1 motoure  2019_paris    148 Aug 18 20:24 file2
+-rw-r--r--    1 motoure  2019_paris      6 Aug 17 15:51 hide
+-rw-r--r--    1 motoure  2019_paris    141 Aug 18 20:23 ilfe
+drwxr-xr-x    6 motoure  2019_paris    204 Aug 18 18:14 includes
+drwxr-xr-x    5 motoure  2019_paris    170 Aug 18 15:38 init
+-rw-r--r--    1 motoure  2019_paris   1919 Aug 17 19:38 last
+drwxr-xr-x   84 motoure  2019_paris   2856 Aug 18 15:38 libft
+-rw-r--r--    1 motoure  2019_paris   5223 Aug 11 22:01 norm.res
+drwxr-xr-x   16 motoure  2019_paris    544 Aug 18 16:59 parsing
+-rw-r--r--    1 motoure  2019_paris    125 Aug 14 23:24 res
+-rw-r--r--    1 motoure  2019_paris   1505 Aug 17 22:59 res1
+-rw-r--r--    1 motoure  2019_paris      0 Aug 17 10:46 res2
+drwxr-xr-x    4 motoure  2019_paris    136 Aug 11 23:41 srcs
+-rw-------    1 motoure  2019_paris  29171 Aug 18 16:05 tags
+-rw-r--r--    1 motoure  2019_paris    152 Aug 18 10:34 test

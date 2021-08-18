@@ -15,4 +15,7 @@ int	is_output(t_cut_cmd **cmd);
 
 int	output_redirection(t_msh *msh, t_cut_cmd *cmd);
 
+char	*flag(char *instr);
+
+void	print_list_msg(t_cut_cmd *print, char *message);
 #endif

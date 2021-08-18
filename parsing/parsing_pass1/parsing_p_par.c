@@ -7,11 +7,11 @@
  */
 int	p_check_par(t_msh *msh, char *str)
 {
-	int	count;
-	int	open;
-	int	close;
-	int	i;
-	int	err;
+	register int	count;
+	register int	open;
+	register int	close;
+	register int	i;
+	register int	err;
 
 	i = -1;
 	open = 0;
@@ -20,18 +20,14 @@ int	p_check_par(t_msh *msh, char *str)
 	count = 0;
 	while (str[++i] && err)
 	{
-		if (str[i] == '(' || str[i] == ')')
-			count++;
-		if (str[i] == ')')
-			close++;
-		if (close > open)
-			err = 0;
-		if (str[i] == '(')
-			open++;
+		count += (str[i] == '(' || str[i] == ')');
+		close += (str[i] == ')');
+		err = (close <= open);
+		open += (str[i] == '(');
 	}
-	err = open != close ? 0 : err;
-	err = count % 2 == 0 ? err : 0;
-	if (!err)
-		msh->tools->error_msg = ft_strdup("Unbalanced parenthesis.");
-	return (err);
+	err = (open == close);
+	err = (count % 2 == 0);
+	return ((!err
+	&& (msh->tools->error_msg = ft_strdup("Unbalanced parenthesis.")))
+	|| err);
 }

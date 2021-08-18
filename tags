@@ -5,11 +5,13 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 $BR	includes/libshell.h	/^# define $BR /;"	d
+$EMPTY_STRING	includes/libshell.h	/^#define $EMPTY_STRING /;"	d
 $ENDL	includes/libshell.h	/^# define $ENDL /;"	d
 $MARK	includes/libshell.h	/^# define $MARK(/;"	d
 $MSG	includes/libshell.h	/^# define $MSG(/;"	d
 $OKOK	includes/libshell.h	/^# define $OKOK /;"	d
 $PRINT	includes/libshell.h	/^# define $PRINT(/;"	d
+$PRINT_LIST	_IO/pipe/pipe.c	/^#define $PRINT_LIST(/;"	d	file:
 $ZERO	includes/libshell.h	/^# define $ZERO /;"	d
 AND	includes/struct.h	/^	AND,$/;"	e	enum:TOKEN
 ANSI_COLOR_BLUE	includes/libshell.h	/^# define ANSI_COLOR_BLUE /;"	d
@@ -45,7 +47,7 @@ IO_H	_IO/IO.h	/^# define IO_H$/;"	d
 LABEL_CMP	_wildcards/multiple.c	/^static int	LABEL_CMP(t_cut_cmd *wild, char **tmp, char *str,$/;"	f	file:
 LABEL_INC	_wildcards/multiple.c	/^static	int	LABEL_INC(t_cut_cmd *wild, char **tmp, char *str,$/;"	f	file:
 LAST_CMD	includes/struct.h	/^	LAST_CMD,$/;"	e	enum:TOKEN
-LFLAGS	Makefile	/^LFLAGS	=	-I. -lncurses -lreadline -fsanitize=address$/;"	m
+LFLAGS	Makefile	/^LFLAGS	=	-I. -lncurses -lreadline #-fsanitize=address$/;"	m
 LIBFT	Makefile	/^LIBFT	=	.\/libft\/libft.a$/;"	m
 LIBFT_H	libft/libft.h	/^# define LIBFT_H$/;"	d
 LIB_SHELL_H	includes/libshell.h	/^# define LIB_SHELL_H$/;"	d
@@ -91,12 +93,14 @@ _END	includes/struct.h	/^	_END,$/;"	e	enum:TOKEN
 _START	includes/struct.h	/^	_START,$/;"	e	enum:TOKEN
 _UNASSIGNED	includes/struct.h	/^	_UNASSIGNED,$/;"	e	enum:TOKEN
 _deprecated_add_to_env	error/error.c	/^static int	_deprecated_add_to_env(t_cut_cmd **target, char *elem, t_TOKEN TOKEN)$/;"	f	file:
+_dollar_append_if_valid	_cmd_exec/[execve2].c	/^void	_dollar_append_if_valid(t_msh *msh, t_cut_cmd *iterator, char **current_write, char **elem_ptr)$/;"	f
+_dollar_handle_append_failure	_cmd_exec/[execve2].c	/^void	_dollar_handle_append_failure(t_msh *msh, t_cut_cmd *iterator, char **current_write, char **elem_ptr)$/;"	f
 _place_holder_determine_wildcard_type	_wildcards/determine.c	/^void	_place_holder_determine_wildcard_type(t_msh *msh, t_cut_cmd **iterator)$/;"	f
 _place_holder_get_path	_cmd_exec/[execve2].c	/^char	*_place_holder_get_path(t_msh *msh, t_cut_cmd *cmd)$/;"	f
 _place_holder_handle_expand_env	_cmd_exec/[execve2].c	/^void	_place_holder_handle_expand_env(t_msh *msh, t_cut_cmd *cmd)$/;"	f
 _place_holder_handle_wildcards	_wildcards/handle_wildcards.c	/^void	_place_holder_handle_wildcards(t_msh *msh, t_cut_cmd *cmd)$/;"	f
 _place_holder_substitute_wildcards	_wildcards/handle_wildcards.c	/^static void	_place_holder_substitute_wildcards(t_msh *msh)$/;"	f	file:
-_placeholder_handle_cmd	_cmd_exec/handle_cmd2.c	/^int	_placeholder_handle_cmd(t_msh *msh)$/;"	f
+_placeholder_handle_cmd	_cmd_exec/handle_cmd.c	/^int		_placeholder_handle_cmd(t_msh *msh)$/;"	f
 add	parsing/string_utils.c	/^int	add(t_msh *msh, char *elem, t_TOKEN TOKEN)$/;"	f
 add_builtin	_builtins/builtin1.c	/^void	add_builtin(int (***f_p_builtin)(t_msh *msh, t_cut_cmd *cmd),$/;"	f
 add_env	_env/env1.c	/^int	add_env(t_msh **msh, char *content, int mode)$/;"	f
@@ -116,11 +120,12 @@ c_is_present	parsing/string_utils_2.c	/^int	c_is_present(char *str, char c)$/;"	
 canon	includes/libshell.h	/^struct termios canon;$/;"	v	typeref:struct:termios
 catch_and	_cmd_exec/handle_cmd.c	/^int	catch_and(t_msh *msh, t_cut_cmd **pos)$/;"	f
 catch_or	_cmd_exec/handle_cmd.c	/^int	catch_or(t_msh *msh, t_cut_cmd **pos)$/;"	f
+check_div_redir	_IO/handle_redirection.bak.c	/^int	check_div_redir(t_cut_cmd *cmd)$/;"	f
+check_exception	parsing/parsing_pass2/parsing_p_p_token.c	/^int	check_exception(t_cut_cmd **tail)$/;"	f
 check_export	_builtins/builtin1.5.c	/^int	check_export(t_msh *msh, t_cut_cmd *cmd)$/;"	f
 check_option	_builtins/builtin1.5.c	/^int	check_option(t_msh *msh, t_cut_cmd *cmd)$/;"	f
 check_set	libft/ft_strtrim.c	/^int		check_set(char c, char const *set)$/;"	f
 choose_args	_cmd_exec/handle_args.c	/^int	choose_args(t_msh *msh)$/;"	f
-chr_or_zero	_cmd_exec/[execve2].c	/^char	*chr_or_zero(char *str, char c)$/;"	f
 cmd_nopipe	_cmd_exec/exec_type[pipe_no_pipe].c	/^void	cmd_nopipe(t_msh *msh, t_cut_cmd *cmd)$/;"	f
 cmd_pipe	_cmd_exec/exec_type[pipe_no_pipe].c	/^void	cmd_pipe(t_msh *msh, t_cut_cmd *cmd)$/;"	f
 collect	srcs/gc/garbage_co2.c	/^int	collect(int mode)$/;"	f
@@ -133,6 +138,7 @@ debug_tok	parsing/string_utils_3.c	/^	char const *debug_tok[ ] = {"_START",$/;"	
 delete_heredoc	_cmd_exec/[execve2].c	/^void	delete_heredoc(t_msh *msh)$/;"	f
 determine_path_type	_cmd_exec/[execve].c	/^char	*determine_path_type(t_cut_cmd *cmd, char *str)$/;"	f
 determine_wildcard_type	_wildcards/determine.c	/^static int	determine_wildcard_type(t_msh *msh, t_cut_cmd **iterator, char *str)$/;"	f	file:
+div_output_redirection	_IO/output.c	/^int	div_output_redirection(t_msh *msh, t_cut_cmd *cmd)$/;"	f
 double_left	_IO/input.c	/^static void	double_left(t_msh *msh, t_cut_cmd *cmd)$/;"	f	file:
 dst	includes/gc.h	/^	int								dst;$/;"	m	struct:s_garbage_collector
 elem	includes/struct.h	/^	char				*elem;$/;"	m	struct:s_cut_cmd
@@ -143,10 +149,12 @@ errors	includes/struct.h	/^	t_cut_cmd	*errors;$/;"	m	struct:s_tools
 escape_symbol	parsing/parsing_pass1/parsing_p_symbol.c	/^int	escape_symbol(t_msh *msh, char *str, char **ret, int i)$/;"	f
 ewl	libft/ft_split.c	/^static int	*ewl(char const *s, char c)$/;"	f	file:
 father_fork	_cmd_exec/exec_type[pipe_no_pipe].c	/^void	father_fork(t_msh *msh, t_cut_cmd *cmd, int pid, int *bfd)$/;"	f
+fd_flag	includes/struct.h	/^	int					fd_flag;$/;"	m	struct:s_cut_cmd
 fdin	includes/struct.h	/^	int			fdin;$/;"	m	struct:s_tools
 fdout	includes/struct.h	/^	int			fdout;$/;"	m	struct:s_tools
 fill	parsing/string_utils.c	/^t_cut_cmd		*fill(char *elem, t_TOKEN TOKEN)$/;"	f
 find_quote	parsing/parsing_pass1/parsing_p_quotes.c	/^char	find_quote(t_msh *msh, char quote, int remove)$/;"	f
+flag	_IO/output.c	/^char	*flag(char *instr)$/;"	f
 free_mute	srcs/gc/garbage_co2.c	/^void	free_mute(void)$/;"	f
 free_mute_target	srcs/gc/garbage_co.c	/^int	free_mute_target(void *target)$/;"	f
 free_normal	srcs/gc/garbage_co2.c	/^void	free_normal(void)$/;"	f
@@ -162,7 +170,6 @@ ft_isdigit	libft/ft_isdigit.c	/^int	ft_isdigit(int c)$/;"	f
 ft_isprint	libft/ft_isprint.c	/^int	ft_isprint(int c)$/;"	f
 ft_itoa	libft/ft_itoa.c	/^char	*ft_itoa(int n)$/;"	f
 ft_ls	_builtins/ft_internal_ls.c	/^t_cut_cmd	*ft_ls(char *path, char *options)$/;"	f
-ft_ls	_cmd_exec/[execve].c	/^t_cut_cmd	*ft_ls(char *path, char *options)$/;"	f
 ft_memccpy	libft/ft_memccpy.c	/^void	*ft_memccpy(void *dst, const void *src, int c, size_t n)$/;"	f
 ft_memchr	libft/ft_memchr.c	/^void	*ft_memchr(const void *s, int c, size_t n)$/;"	f
 ft_memcmp	libft/ft_memcmp.c	/^int	ft_memcmp(const void *s1, const void *s2, size_t n)$/;"	f
@@ -171,6 +178,7 @@ ft_memmove	libft/ft_memmove.c	/^void	*ft_memmove(void *dst, const void *src, siz
 ft_memset	libft/ft_bzero.c	/^static void		*ft_memset(void *b, int c, size_t len)$/;"	f	file:
 ft_memset	libft/ft_memset.c	/^void	*ft_memset(void *b, int c, size_t len)$/;"	f
 ft_memsub	libft/ft_memsub.c	/^void	ft_memsub(void **dst, void *src, size_t index, int max)$/;"	f
+ft_open	_builtins/ft_internal_ls.c	/^void	ft_open(int *ret, int fd)$/;"	f
 ft_putchar_fd	libft/ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/;"	f
 ft_putchar_str	libft/ft_putchar_str.c	/^void	ft_putchar_str(char **str, char c)$/;"	f
 ft_putendl_fd	libft/ft_putendl_fd.c	/^void	ft_putendl_fd(char *s, int fd)$/;"	f
@@ -223,19 +231,21 @@ get_path	parsing/string_utils_4.c	/^char			*get_path(t_cut_cmd *cmd, char **path
 get_prompt_of	parsing/string_utils_3.c	/^char	*get_prompt_of(t_msh *msh, char *cwd)$/;"	f
 get_val_from_var	_cmd_exec/[execve2].c	/^char	*get_val_from_var(t_cut_cmd *var)$/;"	f
 getnext_pipe	_IO/pipe/pipe.c	/^int	getnext_pipe(t_cut_cmd **cmd)$/;"	f
-goto_next_div	_cmd_exec/handle_cmd2.c	/^int	goto_next_div(t_msh *msh, t_cut_cmd **pos)$/;"	f
+goto_end_div	_IO/output.bak.c	/^int	goto_end_div(t_cut_cmd **cmd)$/;"	f
+goto_next_div	_cmd_exec/handle_cmd.c	/^int			goto_next_div(t_msh *msh, t_cut_cmd **pos)$/;"	f
 handle_args	_cmd_exec/handle_args.c	/^char	**handle_args(t_msh *msh, t_cut_cmd *cmd)$/;"	f
 handle_args2	_cmd_exec/handle_args.c	/^char			**handle_args2(t_cut_cmd *cmd)$/;"	f
 handle_builtins	_builtins/builtin1.c	/^void	handle_builtins(t_msh *msh, t_cut_cmd *cmd)$/;"	f
-handle_cmd	_cmd_exec/handle_cmd.c	/^int	handle_cmd(t_msh *msh, t_cut_cmd *pos)$/;"	f
+handle_cmd	_cmd_exec/handle_cmd.c	/^int         handle_cmd(t_msh *msh, t_cut_cmd *pos)$/;"	f
 handle_heredoc	_cmd_exec/handle_args.c	/^char	**handle_heredoc(t_msh *msh, t_cut_cmd *cmd, int mode)$/;"	f
+handle_redirection	_IO/handle_redirection.bak.c	/^int	handle_redirection(t_msh *msh, t_cut_cmd *cmd, int fd)$/;"	f
 handle_redirection	_IO/handle_redirection.c	/^int	handle_redirection(t_msh *msh, t_cut_cmd *cmd, int fd)$/;"	f
 handler	error/error.c	/^void	handler(int n)$/;"	f
 have_been_read	includes/struct.h	/^	char	*have_been_read;$/;"	m	struct:s_jobs
 head	includes/struct.h	/^	struct s_cut_cmd	*head;$/;"	m	struct:s_env_list	typeref:struct:s_env_list::s_cut_cmd
 head	includes/struct.h	/^	t_cut_cmd	*head;$/;"	m	struct:s_tools
 head_tail	_cmd_exec/[execve].c	/^t_cut_cmd	**head_tail(t_msh *msh, char *mode)$/;"	f
-head_wild_card	includes/struct.h	/^	struct		s_cut_cmd *	head_wild_card;$/;"	m	struct:s_cut_cmd	typeref:struct:s_cut_cmd::s_cut_cmd
+head_wild_card	includes/struct.h	/^	struct s_cut_cmd *	head_wild_card;$/;"	m	struct:s_cut_cmd	typeref:struct:s_cut_cmd::s_cut_cmd
 heredoc2	_cmd_exec/handle_args.c	/^static char	**heredoc2(t_msh *msh, t_cut_cmd *cmd, t_cut_cmd *tmp)$/;"	f	file:
 history_fd	includes/struct.h	/^	int			history_fd;$/;"	m	struct:s_tools
 immune	includes/gc.h	/^	int								immune;$/;"	m	struct:s_addr
@@ -251,17 +261,21 @@ init_tools2	init/init1.c	/^static	void	init_tools2(t_msh *msh)$/;"	f	file:
 input_redirection	_IO/input.c	/^int	input_redirection(t_msh *msh, t_cut_cmd *cmd)$/;"	f
 insert_things	_env/env1.c	/^void	insert_things(t_msh **msh, t_cut_cmd **env_lst, t_cut_cmd *new_block)$/;"	f
 is_builtin	parsing/parsing_pass1/parsing_p_symbol.c	/^int	is_builtin(char *str)$/;"	f
+is_div_output	_IO/output.c	/^int	is_div_output(t_cut_cmd **cmd)$/;"	f
 is_empty_env	_env/env1.c	/^int	is_empty_env(t_cut_cmd *env)$/;"	f
+is_in	_IO/handle_redirection.bak.c	/^static int	is_in(t_cut_cmd *cmd, char *mode)$/;"	f	file:
 is_input	_IO/input.c	/^int	is_input(t_cut_cmd **cmd)$/;"	f
 is_last	includes/struct.h	/^	int					is_last;$/;"	m	struct:s_cut_cmd
 is_match	parsing/string_utils_2.c	/^int	is_match(char *list, char sep, char *elem)$/;"	f
 is_match2	parsing/string_utils_2.c	/^int	is_match2(char *list, char sep, char *elem)$/;"	f
+is_output	_IO/output.bak.c	/^int	is_output(t_cut_cmd **cmd)$/;"	f
 is_output	_IO/output.c	/^int	is_output(t_cut_cmd **cmd)$/;"	f
 is_quote	parsing/string_utils.c	/^int	is_quote(char c, char type)$/;"	f
 is_same	parsing/string_utils_3.c	/^int		is_same(char *s1, char *s2)$/;"	f
 is_symbol	parsing/string_utils.c	/^int	is_symbol(char c)$/;"	f
 is_wildcard	_wildcards/handle_wildcards.c	/^static int	is_wildcard(t_msh *msh, t_cut_cmd **iterator, char *str)$/;"	f	file:
 ispipe	_IO/pipe/pipe.c	/^void	ispipe(t_msh *msh)$/;"	f
+isredir	_IO/handle_redirection.bak.c	/^int	isredir(t_cut_cmd *cmd)$/;"	f
 isredir	_IO/handle_redirection.c	/^int	isredir(t_cut_cmd *cmd)$/;"	f
 istmp	includes/struct.h	/^	int			istmp;$/;"	m	struct:s_tools
 jobs	includes/struct.h	/^	t_job		*jobs;$/;"	m	struct:s_msh
@@ -274,20 +288,21 @@ list_len	parsing/string_utils_5.c	/^int	list_len(t_cut_cmd *list)$/;"	f
 list_to_split	parsing/string_utils_4.c	/^char		**list_to_split(t_cut_cmd *target)$/;"	f
 main	srcs/main/main.c	/^int	main(int argc, char **argv, char **envp)$/;"	f
 marker	includes/struct.h	/^	char		*marker;$/;"	m	struct:s_tools
-move_pos	_cmd_exec/handle_cmd2.c	/^void	move_pos(t_msh *msh, t_cut_cmd **pos)$/;"	f
+move_pos	_cmd_exec/handle_cmd.c	/^void	move_pos(t_msh *msh, t_cut_cmd **pos)$/;"	f
 msh_debug	parsing/string_utils_3.c	/^void	msh_debug(t_msh *msh, char *elem)$/;"	f
 mute	includes/gc.h	/^	t_addr							*mute;$/;"	m	struct:s_garbage_collector
 n	includes/gc.h	/^	struct s_addr					*n;$/;"	m	struct:s_addr	typeref:struct:s_addr::s_addr
-n	includes/struct.h	/^	struct s_cut_cmd	*n;$/;"	m	struct:s_cut_cmd	typeref:struct:s_cut_cmd::s_cut_cmd
+n	includes/struct.h	/^	struct s_cut_cmd *	n;$/;"	m	struct:s_cut_cmd	typeref:struct:s_cut_cmd::s_cut_cmd
 n_dup	parsing/string_utils_2.c	/^char	*n_dup(char *str, int start, int end)$/;"	f
 nbpipe	includes/struct.h	/^	int			nbpipe;$/;"	m	struct:s_tools
 nbredir	includes/struct.h	/^	int			nbredir;$/;"	m	struct:s_tools
 noforked_exit	includes/struct.h	/^	int			noforked_exit;$/;"	m	struct:s_tools
 normal	includes/gc.h	/^	t_addr							*normal;$/;"	m	struct:s_garbage_collector
 orig	includes/libshell.h	/^struct termios orig;$/;"	v	typeref:struct:termios
+output_redirection	_IO/output.bak.c	/^int	output_redirection(t_msh *msh, t_cut_cmd *cmd)$/;"	f
 output_redirection	_IO/output.c	/^int	output_redirection(t_msh *msh, t_cut_cmd *cmd)$/;"	f
 p	includes/gc.h	/^	struct s_addr					*p;$/;"	m	struct:s_addr	typeref:struct:s_addr::s_addr
-p	includes/struct.h	/^	struct s_cut_cmd	*p;$/;"	m	struct:s_cut_cmd	typeref:struct:s_cut_cmd::s_cut_cmd
+p	includes/struct.h	/^	struct s_cut_cmd *	p;$/;"	m	struct:s_cut_cmd	typeref:struct:s_cut_cmd::s_cut_cmd
 p_check_par	parsing/parsing_pass1/parsing_p_par.c	/^int	p_check_par(t_msh *msh, char *str)$/;"	f
 p_check_quotes	parsing/parsing_pass1/parsing_p_quotes.c	/^int	p_check_quotes(t_msh *msh)$/;"	f
 p_check_symbols	parsing/parsing_pass1/parsing_p_symbol.c	/^int	p_check_symbols(t_msh *msh, char *str)$/;"	f
@@ -305,6 +320,7 @@ p_str_to_struct	parsing/parsing_pass1/parsing_p.c	/^int	p_str_to_struct(t_msh *m
 path	includes/struct.h	/^	char		**path;$/;"	m	struct:s_msh
 pipe	includes/struct.h	/^	int			pipe[2];$/;"	m	struct:s_tools
 print_env	_builtins/random_utils1.c	/^int	print_env(t_msh *msh, t_cut_cmd *target)$/;"	f
+print_list_msg	_IO/output.c	/^void	print_list_msg(t_cut_cmd *print, char *message)$/;"	f
 print_split	parsing/string_utils_3.c	/^void	print_split(char **split, char *way)$/;"	f
 prompt_status	includes/struct.h	/^	int		prompt_status;$/;"	m	struct:s_jobs
 push_to_mute	srcs/gc/garbage_co2.c	/^int	push_to_mute(t_addr *new)$/;"	f
@@ -318,6 +334,8 @@ s_garbage_collector	includes/gc.h	/^typedef struct s_garbage_collector$/;"	s
 s_jobs	includes/struct.h	/^typedef struct s_jobs$/;"	s
 s_msh	includes/struct.h	/^typedef struct s_msh$/;"	s
 s_tools	includes/struct.h	/^typedef struct s_tools$/;"	s
+set_cmd_end	_IO/handle_redirection.bak.c	/^void	set_cmd_end(t_cut_cmd **cmd)$/;"	f
+set_div_fd	_IO/handle_redirection.bak.c	/^int	set_div_fd(t_msh *msh, t_cut_cmd *cmd, int fd)$/;"	f
 simple_exec	_cmd_exec/[execve2].c	/^void	simple_exec(t_msh *msh, t_cut_cmd *cmd)$/;"	f
 single_or_multiple	_wildcards/handle_wildcards.c	/^static void	single_or_multiple(t_msh *msh, t_cut_cmd **pos)$/;"	f	file:
 size	includes/struct.h	/^	int					size;$/;"	m	struct:s_env_list
@@ -327,7 +345,6 @@ split_quotes	parsing/parsing_pass1/parsing_p_quotes.c	/^int	split_quotes(t_msh *
 status	includes/struct.h	/^	int			status;$/;"	m	struct:s_tools
 str_modulo	parsing/string_utils_2.c	/^char	*str_modulo(char *src, char **modulo, int inc)$/;"	f
 strdup_wildcard_or_elem	_cmd_exec/handle_args.c	/^int	strdup_wildcard_or_elem(t_cut_cmd *tail, char ***args, int i)$/;"	f
-strreduce_range	_cmd_exec/[execve2].c	/^void	strreduce_range(char **str, char *end)$/;"	f
 sub	includes/struct.h	/^	struct s_cut_cmd	*sub;$/;"	m	struct:s_env_list	typeref:struct:s_env_list::s_cut_cmd
 substitute_wildcards	_wildcards/single.c	/^void	substitute_wildcards(t_msh *msh, t_cut_cmd **pos)$/;"	f
 substitute_wildcards_multiple	_wildcards/multiple.c	/^void	substitute_wildcards_multiple(t_msh *msh, t_cut_cmd **pos)$/;"	f
@@ -344,7 +361,7 @@ t_msh	includes/struct.h	/^}				t_msh;$/;"	t	typeref:struct:s_msh
 t_tools	includes/struct.h	/^}				t_tools;$/;"	t	typeref:struct:s_tools
 tail	includes/struct.h	/^	struct s_cut_cmd	*tail;$/;"	m	struct:s_env_list	typeref:struct:s_env_list::s_cut_cmd
 tail	includes/struct.h	/^	t_cut_cmd	*tail;$/;"	m	struct:s_tools
-tail_wild_card	includes/struct.h	/^	struct		s_cut_cmd *	tail_wild_card;$/;"	m	struct:s_cut_cmd	typeref:struct:s_cut_cmd::s_cut_cmd
+tail_wild_card	includes/struct.h	/^	struct s_cut_cmd *	tail_wild_card;$/;"	m	struct:s_cut_cmd	typeref:struct:s_cut_cmd::s_cut_cmd
 tmp_node	includes/struct.h	/^	t_cut_cmd	*tmp_node;$/;"	m	struct:s_tools
 tmp_status	includes/struct.h	/^	int			tmp_status;$/;"	m	struct:s_tools
 tmpfd	includes/struct.h	/^	int			tmpfd;$/;"	m	struct:s_tools

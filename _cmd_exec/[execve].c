@@ -1,31 +1,5 @@
 #include "../includes/libshell.h"
 
-t_cut_cmd	*ft_ls(char *path, char *options)
-{
-	struct dirent	*de;
-	DIR				*dr;
-	char			*tmp;
-	t_cut_cmd		*concat;
-
-	(void)concat;
-	if (path)
-		dr = opendir(path);
-	else
-		dr = opendir(".");
-	concat = NULL;
-	while (dr != NULL && (de = readdir(dr)) != NULL)
-	{
-		tmp = ft_strdup(de->d_name);
-		if (!is_same(options, "-a") && tmp[0] == '.')
-			continue ;
-		else
-			add_to_env(&concat, tmp, _UNASSIGNED);
-		tmp = NULL;
-	}
-	dr ? closedir(dr) : 0;
-	return (concat);
-}
-
 char	*determine_path_type(t_cut_cmd *cmd, char *str)
 {
 	int		i;

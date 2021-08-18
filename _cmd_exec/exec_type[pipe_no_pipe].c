@@ -26,7 +26,6 @@ void	son_fork(t_msh *msh, t_cut_cmd *cmd, int bfd)
 		execve(exec_path, args, list_to_split(msh->env->head));
 		exit (1);
 	}
-	ft_putstr_fd("XXX", 1);
 }
 
 void	father_fork(t_msh *msh, t_cut_cmd *cmd, int pid, int *bfd)
@@ -45,9 +44,8 @@ void	father_fork(t_msh *msh, t_cut_cmd *cmd, int pid, int *bfd)
 void	cmd_pipe(t_msh *msh, t_cut_cmd *cmd)
 {
 	int		pid;
-	exit (0);
 	int		bfd;
-
+	
 	bfd = 0;
 	while (cmd != NULL)
 	{

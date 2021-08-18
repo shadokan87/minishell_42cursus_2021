@@ -34,5 +34,7 @@ int		check_export(t_msh *msh, t_cut_cmd *cmd);
 
 void	print_alpha_export(t_msh *msh, t_cut_cmd *cmd);
 
+void	ft_open(int *ret, int fd);
+
 t_cut_cmd	*ft_ls(char *path, char *options);
 #endif

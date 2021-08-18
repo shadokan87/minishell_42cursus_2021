@@ -39,4 +39,6 @@ int		goto_next_div(t_msh *msh, t_cut_cmd **pos);
 
 void	init_pos(t_cut_cmd *tail, t_cut_cmd **pos);
 
+char	*get_val_from_var(t_cut_cmd *var);
+
 #endif

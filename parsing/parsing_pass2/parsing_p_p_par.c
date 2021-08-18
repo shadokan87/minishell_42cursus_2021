@@ -12,7 +12,7 @@ int	p_p_ready_to_process(t_msh *msh)
 			msh->tools->error_msg
 				= ft_strjoin("operand missing before: ", iter->elem);
 		else if ((iter->TOKEN == CLOSED_DIV && iter->p)
-			&& !is_match("&&:||:)", ':', iter->p->elem))
+			&& !is_match("&&:||:):>:>>", ':', iter->p->elem))
 			msh->tools->error_msg
 				= ft_strjoin("operand missing after: ", iter->elem);
 		else if ((iter->TOKEN == AND)

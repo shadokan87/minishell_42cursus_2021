@@ -1,5 +1,6 @@
 #include "../includes/libshell.h"
 
+/*
 int	_placeholder_handle_cmd(t_msh *msh)
 {
 	t_cut_cmd	*pos;
@@ -41,3 +42,4 @@ int	goto_next_div(t_msh *msh, t_cut_cmd **pos)
 	}
 	return (1);
 }
+*/

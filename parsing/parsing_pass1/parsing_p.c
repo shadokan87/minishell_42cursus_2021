@@ -20,9 +20,9 @@ char	*p_escape_line(t_msh *msh, char *str)
 /* Function has more than 25 lines */
 int	p_str_to_struct(t_msh *msh, char *str)
 {
-	int		i;
-	int		y;
-	int		z;
+	register int		i;
+	register int		y;
+	register int		z;
 	char	*new;
 	char	**split;
 
