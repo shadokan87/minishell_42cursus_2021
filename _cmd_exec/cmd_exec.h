@@ -41,4 +41,8 @@ void	init_pos(t_cut_cmd *tail, t_cut_cmd **pos);
 
 char	*get_val_from_var(t_cut_cmd *var);
 
+t_TOKEN		scope_contain_redir(t_cut_cmd *pos);
+
+t_cut_cmd	*get_next_token_scope(t_cut_cmd *pos, t_TOKEN TOKEN);
+
 #endif
