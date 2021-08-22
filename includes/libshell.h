@@ -6,7 +6,7 @@
 /*   By: tidminta <tidminta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:52:06 by tidminta          #+#    #+#             */
-/*   Updated: 2021/08/14 06:05:35 by motoure          ###   ########.fr       */
+/*   Updated: 2021/08/21 04:53:52 by motoure          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@
 # define SYMBOL_LIST ">:<:|:&"
 # define SYMBOL_DETERMINE "| > >> < << || && ( )"
 # define BUILTIN_LIST "echo cd pwd env export unset exit"
+
+#define SYMBOL_ALLOWED_BEFORE_OPEN_DIV "&&:||:("
+#define SYMBOL_ALLOWED_AFTER_CLOSED_DIV "&&:||:):>:>>"
 
 
 # define W_START_WITH 0

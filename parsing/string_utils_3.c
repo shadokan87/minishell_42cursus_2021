@@ -142,6 +142,10 @@ char	*get_prompt_of(t_msh *msh, char *cwd)
 		home_path = ft_split(home->elem, '=')[1];
 	if (home && is_same(home_path, cwd))
 		cwd = ft_strdup("/~");
+	if (!cwd)
+		cwd = get_val_from_var(get_env_of(msh->tools->tail, "PWD"));
+	if (!cwd)
+		cwd = ft_strdup("?");
 	cwd = ft_strrev(cwd);
 	if (is_same(cwd, "/"))
 		ret = ft_strndup("/", 1);

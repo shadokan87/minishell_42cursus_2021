@@ -26,11 +26,7 @@ int	catch_and(t_msh *msh, t_cut_cmd **pos)
 	while (msh->tools->status && (*pos))
 	{
 		if ((*pos)->TOKEN == OPEN_DIV)
-		{
 			deep++;
-			flag("push TRUNC_DONE=false");
-			flag("push O_TRUNC=0");
-		}
 		if ((*pos)->TOKEN == OR && !deep)
 			break ;
 		(*pos) = (*pos)->p;
@@ -105,8 +101,6 @@ int			goto_next_div(t_msh *msh, t_cut_cmd **pos)
 			(*pos) = (*pos)->p;
 		}
 	}
-	flag("push TRUNC_DONE=false");
-	flag("push O_TRUNC=0");
 	return (1);
 }
 
@@ -145,30 +139,15 @@ t_TOKEN		scope_contain_redir(t_cut_cmd *pos)
 	return (_UNASSIGNED);
 }
 
-void		update_trunc_flag(t_cut_cmd *pos)
+void		place_flag(t_cut_cmd *pos)
 {
-	(void)pos;
-	flag("push O_TRUNC=0");
-	if (pos->n && pos->n->TOKEN == OPEN_DIV && scope_contain_redir(pos) == _UNASSIGNED)     //(ls > file && ls -la && whereis ls)  > file
-		flag(ft_strjoin("push O_TRUNC=", ft_itoa(O_TRUNC)));
-	else
-		flag("push");
-	if (pos->TOKEN == C_BUILTIN || pos->TOKEN == C_ENV)
+	if (is_in_div(pos) && (scope_contain_redir(pos) == _UNASSIGNED))
 	{
-		$MSG(pos->elem)
-		if (scope_contain_redir(pos) == _UNASSIGNED)
-			$MSG("\nnoredir")
-	}
-}
-
-void	place_o_trunc_flags(t_cut_cmd *pos)
-{
-	(void)pos;
-	flag("push O_TRUNC=0");
-	if ((pos->TOKEN == C_ENV || pos->TOKEN == C_BUILTIN) && (scope_contain_redir(pos) == _UNASSIGNED))
-	{
+		if (flag("TRUNC_WAIT == true"))
+			return ;
+		$MSG("done")
 		flag(ft_strjoin("push O_TRUNC=", ft_itoa(O_TRUNC)));
-		flag("push TRUNC_DONE=true");
+		flag("push TRUNC_WAIT=true");
 	}
 }
 
@@ -181,8 +160,7 @@ int         handle_cmd(t_msh *msh, t_cut_cmd *pos)
 	msh->tools->noforked_exit = 0;
 	ispipe(msh);
 	whatpostions(msh);
-	if (is_in_div(pos) && !is_same(flag("get TRUNC_DONE"), "true"))
-		place_o_trunc_flags(pos);
+//	place_flag(pos);
 	if (msh->tools->nbpipe > 0)
 		cmd_pipe(msh, pos);
 	else

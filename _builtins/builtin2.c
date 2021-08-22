@@ -48,7 +48,6 @@ int	builtin_echo(t_msh *msh, t_cut_cmd *cmd)
 
 int	builtin_cd(t_msh *msh, t_cut_cmd *cmd)
 {
-	return (append_error(msh, cmd, "cd: usage: [path]\n", 1));
 	(void)msh;
 	(void)cmd;
 	if ((!cmd->p) ||

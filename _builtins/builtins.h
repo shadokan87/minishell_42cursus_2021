@@ -38,6 +38,8 @@ void	ft_open(int *ret, int fd);
 
 char	*flag(char *instr);
 
+char	*flag_cmp(t_cut_cmd *flags, char *instr);
+
 void	print_list_msg(t_cut_cmd *print, char *message);
 
 t_cut_cmd	*ft_ls(char *path, char *options);

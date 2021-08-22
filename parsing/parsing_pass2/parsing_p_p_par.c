@@ -1,26 +1,35 @@
 #include "../../includes/libshell.h"
 
+int	p_p_syntax_exceptions(t_msh *msh)
+{
+	return ((msh->tools->error_msg == NULL));
+}
+
+
+
 int	p_p_ready_to_process(t_msh *msh)
 {
-	t_cut_cmd	*iter;
+	t_cut_cmd	*iterator;
 
-	iter = msh->tools->head;
-	while (iter && !msh->tools->error_msg)
+	iterator = msh->tools->head;
+	while (iterator && !msh->tools->error_msg)
 	{
-		if ((iter->TOKEN == OPEN_DIV && iter->n)
-			&& !is_match("&&:||:(", ':', iter->n->elem))
+		if ((iterator->TOKEN == OPEN_DIV && iterator->n)
+			&& !is_match(SYMBOL_ALLOWED_BEFORE_OPEN_DIV, ':', iterator->n->elem))
 			msh->tools->error_msg
-				= ft_strjoin("operand missing before: ", iter->elem);
-		else if ((iter->TOKEN == CLOSED_DIV && iter->p)
-			&& !is_match("&&:||:):>:>>", ':', iter->p->elem))
+				= ft_strjoin("operand missing before: ", iterator->elem);
+		else if ((iterator->TOKEN == CLOSED_DIV && iterator->p)
+			&& !is_match(SYMBOL_ALLOWED_AFTER_CLOSED_DIV, ':', iterator->p->elem))
 			msh->tools->error_msg
-				= ft_strjoin("operand missing after: ", iter->elem);
-		else if ((iter->TOKEN == AND)
-			&& (is_match("&", ':', iter->elem)))
+				= ft_strjoin("operand missing after: ", iterator->elem);
+		else if ((iterator->TOKEN == AND)
+			&& (is_match("&", ':', iterator->elem)))
 			msh->tools->error_msg = p_near("&");
-		iter = iter->n;
+		else if ((iterator->TOKEN == AND) && iterator->p->TOKEN == CLOSED_DIV)
+			msh->tools->error_msg = p_near(")");
+		iterator = iterator->n;
 	}
-	return ((msh->tools->error_msg == NULL));
+	return (p_p_syntax_exceptions(msh));
 }
 
 int	p_p_check_par_join(t_msh *msh)

@@ -29,7 +29,6 @@ int	is_div_output(t_cut_cmd **cmd)
 	}
 	return (ERROR);
 }
-
 int	div_output_redirection(t_msh *msh, t_cut_cmd *cmd)
 {
 	if (is_div_output(&cmd) == SUCCESS)
@@ -39,15 +38,19 @@ int	div_output_redirection(t_msh *msh, t_cut_cmd *cmd)
 		{
 			if (cmd->TOKEN == ARG && cmd->n->TOKEN == R_REDIR)
 			{
-				ft_open(&msh->tools->fdout, open(cmd->elem, O_RDWR | O_CREAT | O_APPEND, 0666));
+				ft_open(&msh->tools->fdout, open(cmd->elem, O_RDWR | O_CREAT | O_TRUNC, 0666));
 				if (msh->tools->fdout < 0)
 					append_error(msh, cmd, NULL, errno);
 			}
 			else if (cmd->TOKEN == ARG && cmd->n->TOKEN == D_R_REDIR)
 			{
-				ft_open(&msh->tools->fdout, open(cmd->elem, O_RDWR | O_CREAT | O_APPEND | ft_atoi(flag("get O_TRUNC")), 0666));
-				msh->tools->tail->fd_flag = 0;
-				flag("push O_TRUNC=0");
+				if (flag("DONE == true"))
+					ft_open(&msh->tools->fdout, open(cmd->elem, O_RDWR | O_CREAT | O_APPEND, 0666));
+				else
+				{
+					ft_open(&msh->tools->fdout, open(cmd->elem, O_RDWR | O_CREAT | O_APPEND | O_TRUNC, 0666));
+					flag("DONE = true");
+				}
 				if (msh->tools->fdout < 0)
 					append_error(msh, cmd, NULL, errno);
 			}

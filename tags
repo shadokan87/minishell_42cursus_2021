@@ -47,7 +47,7 @@ IO_H	_IO/IO.h	/^# define IO_H$/;"	d
 LABEL_CMP	_wildcards/multiple.c	/^static int	LABEL_CMP(t_cut_cmd *wild, char **tmp, char *str,$/;"	f	file:
 LABEL_INC	_wildcards/multiple.c	/^static	int	LABEL_INC(t_cut_cmd *wild, char **tmp, char *str,$/;"	f	file:
 LAST_CMD	includes/struct.h	/^	LAST_CMD,$/;"	e	enum:TOKEN
-LFLAGS	Makefile	/^LFLAGS	=	-I. -lncurses -lreadline #-fsanitize=address$/;"	m
+LFLAGS	Makefile	/^LFLAGS	=	-I. -lncurses -lreadline -fsanitize=address$/;"	m
 LIBFT	Makefile	/^LIBFT	=	.\/libft\/libft.a$/;"	m
 LIBFT_H	libft/libft.h	/^# define LIBFT_H$/;"	d
 LIB_SHELL_H	includes/libshell.h	/^# define LIB_SHELL_H$/;"	d
@@ -78,6 +78,8 @@ SRCS	Makefile	/^SRCS	=	.\/srcs\/main\/main.c \\$/;"	m
 STRING_UTILS_H	parsing/string_utils.h	/^# define STRING_UTILS_H$/;"	d
 STRUCT_H	includes/struct.h	/^# define STRUCT_H$/;"	d
 SUCCESS	includes/cmd.h	/^# define SUCCESS /;"	d
+SYMBOL_ALLOWED_AFTER_CLOSED_DIV	includes/libshell.h	/^#define SYMBOL_ALLOWED_AFTER_CLOSED_DIV /;"	d
+SYMBOL_ALLOWED_BEFORE_OPEN_DIV	includes/libshell.h	/^#define SYMBOL_ALLOWED_BEFORE_OPEN_DIV /;"	d
 SYMBOL_DETERMINE	includes/libshell.h	/^# define SYMBOL_DETERMINE /;"	d
 SYMBOL_LIST	includes/libshell.h	/^# define SYMBOL_LIST /;"	d
 S_QUOTE	includes/struct.h	/^	S_QUOTE,$/;"	e	enum:TOKEN
@@ -148,13 +150,15 @@ error_msg	includes/struct.h	/^	char		*error_msg;$/;"	m	struct:s_tools
 errors	includes/struct.h	/^	t_cut_cmd	*errors;$/;"	m	struct:s_tools
 escape_symbol	parsing/parsing_pass1/parsing_p_symbol.c	/^int	escape_symbol(t_msh *msh, char *str, char **ret, int i)$/;"	f
 ewl	libft/ft_split.c	/^static int	*ewl(char const *s, char c)$/;"	f	file:
+exec_command	test.c	/^int	exec_command(char *commande)$/;"	f
 father_fork	_cmd_exec/exec_type[pipe_no_pipe].c	/^void	father_fork(t_msh *msh, t_cut_cmd *cmd, int pid, int *bfd)$/;"	f
 fd_flag	includes/struct.h	/^	int					fd_flag;$/;"	m	struct:s_cut_cmd
 fdin	includes/struct.h	/^	int			fdin;$/;"	m	struct:s_tools
 fdout	includes/struct.h	/^	int			fdout;$/;"	m	struct:s_tools
 fill	parsing/string_utils.c	/^t_cut_cmd		*fill(char *elem, t_TOKEN TOKEN)$/;"	f
 find_quote	parsing/parsing_pass1/parsing_p_quotes.c	/^char	find_quote(t_msh *msh, char quote, int remove)$/;"	f
-flag	_IO/output.c	/^char	*flag(char *instr)$/;"	f
+flag	_builtins/ft_internal.c	/^char	*flag(char *instr)$/;"	f
+flag	_builtins/ft_internal_ls.c	/^char	*flag(char *instr)$/;"	f
 free_mute	srcs/gc/garbage_co2.c	/^void	free_mute(void)$/;"	f
 free_mute_target	srcs/gc/garbage_co.c	/^int	free_mute_target(void *target)$/;"	f
 free_normal	srcs/gc/garbage_co2.c	/^void	free_normal(void)$/;"	f
@@ -169,6 +173,7 @@ ft_isascii	libft/ft_isascii.c	/^int	ft_isascii(int c)$/;"	f
 ft_isdigit	libft/ft_isdigit.c	/^int	ft_isdigit(int c)$/;"	f
 ft_isprint	libft/ft_isprint.c	/^int	ft_isprint(int c)$/;"	f
 ft_itoa	libft/ft_itoa.c	/^char	*ft_itoa(int n)$/;"	f
+ft_ls	_builtins/ft_internal.c	/^t_cut_cmd	*ft_ls(char *path, char *options)$/;"	f
 ft_ls	_builtins/ft_internal_ls.c	/^t_cut_cmd	*ft_ls(char *path, char *options)$/;"	f
 ft_memccpy	libft/ft_memccpy.c	/^void	*ft_memccpy(void *dst, const void *src, int c, size_t n)$/;"	f
 ft_memchr	libft/ft_memchr.c	/^void	*ft_memchr(const void *s, int c, size_t n)$/;"	f
@@ -178,12 +183,14 @@ ft_memmove	libft/ft_memmove.c	/^void	*ft_memmove(void *dst, const void *src, siz
 ft_memset	libft/ft_bzero.c	/^static void		*ft_memset(void *b, int c, size_t len)$/;"	f	file:
 ft_memset	libft/ft_memset.c	/^void	*ft_memset(void *b, int c, size_t len)$/;"	f
 ft_memsub	libft/ft_memsub.c	/^void	ft_memsub(void **dst, void *src, size_t index, int max)$/;"	f
+ft_open	_builtins/ft_internal.c	/^void	ft_open(int *ret, int fd)$/;"	f
 ft_open	_builtins/ft_internal_ls.c	/^void	ft_open(int *ret, int fd)$/;"	f
 ft_putchar_fd	libft/ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/;"	f
 ft_putchar_str	libft/ft_putchar_str.c	/^void	ft_putchar_str(char **str, char c)$/;"	f
 ft_putendl_fd	libft/ft_putendl_fd.c	/^void	ft_putendl_fd(char *s, int fd)$/;"	f
 ft_putnbr_fd	libft/ft_putnbr_fd.c	/^void	ft_putnbr_fd(int n, int fd)$/;"	f
 ft_putstr_fd	libft/ft_putstr_fd.c	/^void	ft_putstr_fd(char *s, int fd)$/;"	f
+ft_readdir	_builtins/ft_internal.c	/^static int	ft_readdir(struct dirent **de, DIR *dr)$/;"	f	file:
 ft_readdir	_builtins/ft_internal_ls.c	/^static int	ft_readdir(struct dirent **de, DIR *dr)$/;"	f	file:
 ft_realloc	libft/ft_realloc.c	/^void	*ft_realloc(void *ptr, size_t size)$/;"	f
 ft_split	libft/ft_split.c	/^char		**ft_split(char const *s, char c)$/;"	f
@@ -227,11 +234,11 @@ get_line_info	parsing/string_utils_3.c	/^void	get_line_info(t_cut_cmd *to_debug)
 get_next_char	parsing/parsing_pass1/parsing_p_quotes_2.c	/^char	get_next_char(char *str, int i, char *regex)$/;"	f
 get_next_quote	parsing/parsing_pass1/parsing_p_quotes_2.c	/^int	get_next_quote(char *str, int i)$/;"	f
 get_next_quote2	parsing/parsing_pass1/parsing_p_quotes.c	/^int	get_next_quote2(char *src, char **dst)$/;"	f
+get_next_token_scope	_cmd_exec/handle_cmd.c	/^t_cut_cmd	*get_next_token_scope(t_cut_cmd *pos, t_TOKEN TOKEN)$/;"	f
 get_path	parsing/string_utils_4.c	/^char			*get_path(t_cut_cmd *cmd, char **paths)$/;"	f
 get_prompt_of	parsing/string_utils_3.c	/^char	*get_prompt_of(t_msh *msh, char *cwd)$/;"	f
 get_val_from_var	_cmd_exec/[execve2].c	/^char	*get_val_from_var(t_cut_cmd *var)$/;"	f
 getnext_pipe	_IO/pipe/pipe.c	/^int	getnext_pipe(t_cut_cmd **cmd)$/;"	f
-goto_end_div	_IO/output.bak.c	/^int	goto_end_div(t_cut_cmd **cmd)$/;"	f
 goto_next_div	_cmd_exec/handle_cmd.c	/^int			goto_next_div(t_msh *msh, t_cut_cmd **pos)$/;"	f
 handle_args	_cmd_exec/handle_args.c	/^char	**handle_args(t_msh *msh, t_cut_cmd *cmd)$/;"	f
 handle_args2	_cmd_exec/handle_args.c	/^char			**handle_args2(t_cut_cmd *cmd)$/;"	f
@@ -264,11 +271,11 @@ is_builtin	parsing/parsing_pass1/parsing_p_symbol.c	/^int	is_builtin(char *str)$
 is_div_output	_IO/output.c	/^int	is_div_output(t_cut_cmd **cmd)$/;"	f
 is_empty_env	_env/env1.c	/^int	is_empty_env(t_cut_cmd *env)$/;"	f
 is_in	_IO/handle_redirection.bak.c	/^static int	is_in(t_cut_cmd *cmd, char *mode)$/;"	f	file:
+is_in_div	_cmd_exec/handle_cmd.c	/^t_cut_cmd	*is_in_div(t_cut_cmd *pos)$/;"	f
 is_input	_IO/input.c	/^int	is_input(t_cut_cmd **cmd)$/;"	f
 is_last	includes/struct.h	/^	int					is_last;$/;"	m	struct:s_cut_cmd
 is_match	parsing/string_utils_2.c	/^int	is_match(char *list, char sep, char *elem)$/;"	f
 is_match2	parsing/string_utils_2.c	/^int	is_match2(char *list, char sep, char *elem)$/;"	f
-is_output	_IO/output.bak.c	/^int	is_output(t_cut_cmd **cmd)$/;"	f
 is_output	_IO/output.c	/^int	is_output(t_cut_cmd **cmd)$/;"	f
 is_quote	parsing/string_utils.c	/^int	is_quote(char c, char type)$/;"	f
 is_same	parsing/string_utils_3.c	/^int		is_same(char *s1, char *s2)$/;"	f
@@ -287,6 +294,7 @@ line	includes/struct.h	/^	t_cut_cmd	*line;$/;"	m	struct:s_msh
 list_len	parsing/string_utils_5.c	/^int	list_len(t_cut_cmd *list)$/;"	f
 list_to_split	parsing/string_utils_4.c	/^char		**list_to_split(t_cut_cmd *target)$/;"	f
 main	srcs/main/main.c	/^int	main(int argc, char **argv, char **envp)$/;"	f
+main	test.c	/^int	main(int argc, char **argv)$/;"	f
 marker	includes/struct.h	/^	char		*marker;$/;"	m	struct:s_tools
 move_pos	_cmd_exec/handle_cmd.c	/^void	move_pos(t_msh *msh, t_cut_cmd **pos)$/;"	f
 msh_debug	parsing/string_utils_3.c	/^void	msh_debug(t_msh *msh, char *elem)$/;"	f
@@ -299,7 +307,6 @@ nbredir	includes/struct.h	/^	int			nbredir;$/;"	m	struct:s_tools
 noforked_exit	includes/struct.h	/^	int			noforked_exit;$/;"	m	struct:s_tools
 normal	includes/gc.h	/^	t_addr							*normal;$/;"	m	struct:s_garbage_collector
 orig	includes/libshell.h	/^struct termios orig;$/;"	v	typeref:struct:termios
-output_redirection	_IO/output.bak.c	/^int	output_redirection(t_msh *msh, t_cut_cmd *cmd)$/;"	f
 output_redirection	_IO/output.c	/^int	output_redirection(t_msh *msh, t_cut_cmd *cmd)$/;"	f
 p	includes/gc.h	/^	struct s_addr					*p;$/;"	m	struct:s_addr	typeref:struct:s_addr::s_addr
 p	includes/struct.h	/^	struct s_cut_cmd *	p;$/;"	m	struct:s_cut_cmd	typeref:struct:s_cut_cmd::s_cut_cmd
@@ -313,6 +320,7 @@ p_p_determine_cmd	parsing/parsing_pass2/parsing_p_p_token.c	/^t_TOKEN	p_p_determ
 p_p_determine_symbol	parsing/parsing_pass2/parsing_p_p_token.c	/^t_TOKEN	p_p_determine_symbol(char *elem)$/;"	f
 p_p_determine_token	parsing/parsing_pass2/parsing_p_p_token.c	/^int	p_p_determine_token(t_msh *msh)$/;"	f
 p_p_ready_to_process	parsing/parsing_pass2/parsing_p_p_par.c	/^int	p_p_ready_to_process(t_msh *msh)$/;"	f
+p_p_syntax_exceptions	parsing/parsing_pass2/parsing_p_p_par.c	/^int	p_p_syntax_exceptions(t_msh *msh)$/;"	f
 p_process_line	parsing/parsing_pass1/parsing_p.c	/^int	p_process_line(t_msh *msh)$/;"	f
 p_putchar_str	parsing/string_utils.c	/^void	p_putchar_str(char **str, char c)$/;"	f
 p_quote_to_struct	parsing/parsing_pass1/parsing_p_quotes.c	/^int	p_quote_to_struct(t_msh *msh, char *str)$/;"	f
@@ -320,7 +328,9 @@ p_str_to_struct	parsing/parsing_pass1/parsing_p.c	/^int	p_str_to_struct(t_msh *m
 path	includes/struct.h	/^	char		**path;$/;"	m	struct:s_msh
 pipe	includes/struct.h	/^	int			pipe[2];$/;"	m	struct:s_tools
 print_env	_builtins/random_utils1.c	/^int	print_env(t_msh *msh, t_cut_cmd *target)$/;"	f
-print_list_msg	_IO/output.c	/^void	print_list_msg(t_cut_cmd *print, char *message)$/;"	f
+print_list_msg	_builtins/ft_internal.c	/^void	print_list_msg(t_cut_cmd *print, char *message)$/;"	f
+print_list_msg	_builtins/ft_internal_ls.c	/^void	print_list_msg(t_cut_cmd *print, char *message)$/;"	f
+print_list_msg2	_IO/handle_redirection.c	/^static void	print_list_msg2(t_cut_cmd *print, char *message)$/;"	f	file:
 print_split	parsing/string_utils_3.c	/^void	print_split(char **split, char *way)$/;"	f
 prompt_status	includes/struct.h	/^	int		prompt_status;$/;"	m	struct:s_jobs
 push_to_mute	srcs/gc/garbage_co2.c	/^int	push_to_mute(t_addr *new)$/;"	f
@@ -334,6 +344,7 @@ s_garbage_collector	includes/gc.h	/^typedef struct s_garbage_collector$/;"	s
 s_jobs	includes/struct.h	/^typedef struct s_jobs$/;"	s
 s_msh	includes/struct.h	/^typedef struct s_msh$/;"	s
 s_tools	includes/struct.h	/^typedef struct s_tools$/;"	s
+scope_contain_redir	_cmd_exec/handle_cmd.c	/^t_TOKEN		scope_contain_redir(t_cut_cmd *pos)$/;"	f
 set_cmd_end	_IO/handle_redirection.bak.c	/^void	set_cmd_end(t_cut_cmd **cmd)$/;"	f
 set_div_fd	_IO/handle_redirection.bak.c	/^int	set_div_fd(t_msh *msh, t_cut_cmd *cmd, int fd)$/;"	f
 simple_exec	_cmd_exec/[execve2].c	/^void	simple_exec(t_msh *msh, t_cut_cmd *cmd)$/;"	f
