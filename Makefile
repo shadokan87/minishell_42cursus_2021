@@ -6,7 +6,7 @@ RM		=	rm -f
 
 CFLAGS	=	-Wall -Wextra -Werror -g
 
-LFLAGS	=	-I. -lncurses -lreadline -fsanitize=address
+LFLAGS	=	-I. -lncurses -lreadline #-fsanitize=address
 
 LIBFT	=	./libft/libft.a
 

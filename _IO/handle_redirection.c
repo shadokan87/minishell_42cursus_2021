@@ -12,7 +12,7 @@ static void	print_list_msg2(t_cut_cmd *print, char *message)
 		}
 		ft_putstr_fd(print->elem, 1);
 		$MSG("\n")
-		print = print->p;
+			print = print->p;
 	}
 }
 

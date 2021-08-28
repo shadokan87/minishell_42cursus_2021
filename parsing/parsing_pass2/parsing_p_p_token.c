@@ -2,7 +2,7 @@
 
 t_TOKEN	p_p_determine_symbol(char *elem)
 {
-	char	**lookup_table;
+	static char	**lookup_table;
 	int		*token_index;
 	int		table_len;
 	int		i;
@@ -96,5 +96,6 @@ int	p_p_determine_token(t_msh *msh)
 		}
 		iter = iter->p;
 	}
-	return (check_exception(&msh->tools->tail));
+	return (1);
+	//return (check_exception(&msh->tools->tail));
 }

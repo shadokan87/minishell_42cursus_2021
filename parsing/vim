@@ -1,0 +1,84 @@
+Missing or invalid header. Header are being reintroduced as a mandatory part of your files. This is not yet an error.
+string_utils.c: Error!
+Error: TOO_MANY_TABS_FUNC   (line:  47, col:  13):	extra tabs before function name
+Error: SPACE_REPLACE_TAB    (line:  49, col:  14):	Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  50, col:   8):	Found space when expecting tab
+Error: MISALIGNED_VAR_DECL  (line:  50, col:   9):	Misaligned variable declaration
+Error: ASSIGN_IN_CONTROL    (line:  53, col:  15):	Assignment in control structure
+Error: SPACE_AFTER_KW       (line:  53, col:  18):	Missing space after keyword
+Missing or invalid header. Header are being reintroduced as a mandatory part of your files. This is not yet an error.
+string_utils.h: OK!
+Missing or invalid header. Header are being reintroduced as a mandatory part of your files. This is not yet an error.
+string_utils_2.c: OK!
+string_utils_3.c: Error!
+	[31mError: Unrecognized token line 83, col 14[0m
+Missing or invalid header. Header are being reintroduced as a mandatory part of your files. This is not yet an error.
+string_utils_4.c: Error!
+Error: SPACE_REPLACE_TAB    (line:   5, col:   8):	Found space when expecting tab
+Error: TOO_MANY_TABS_FUNC   (line:  15, col:   9):	extra tabs before function name
+Error: MISALIGNED_VAR_DECL  (line:  19, col:  17):	Misaligned variable declaration
+Error: TOO_MANY_TABS_FUNC   (line:  42, col:  13):	extra tabs before function name
+Error: ASSIGN_IN_CONTROL    (line:  58, col:  27):	Assignment in control structure
+Error: LINE_TOO_LONG        (line:  60, col:  86):	line too long
+Error: TOO_MANY_LINES       (line:  74, col:   1):	Function has more than 25 lines
+Missing or invalid header. Header are being reintroduced as a mandatory part of your files. This is not yet an error.
+string_utils_5.c: OK!
+Missing or invalid header. Header are being reintroduced as a mandatory part of your files. This is not yet an error.
+parsing_pass1/parsing_p.c: Error!
+Error: MISALIGNED_VAR_DECL  (line:  26, col:  13):	Misaligned variable declaration
+Error: MISALIGNED_VAR_DECL  (line:  27, col:  13):	Misaligned variable declaration
+Error: TOO_MANY_LINES       (line:  67, col:   1):	Function has more than 25 lines
+Missing or invalid header. Header are being reintroduced as a mandatory part of your files. This is not yet an error.
+parsing_pass1/parsing_p_par.c: Error!
+Error: TOO_FEW_TAB          (line:  26, col:   5):	Missing tabs for indent level
+Error: TOO_FEW_TAB          (line:  27, col:   5):	Missing tabs for indent level
+Missing or invalid header. Header are being reintroduced as a mandatory part of your files. This is not yet an error.
+parsing_pass1/parsing_p_quotes.c: Error!
+Error: TOO_MANY_LINES       (line: 118, col:   1):	Function has more than 25 lines
+Missing or invalid header. Header are being reintroduced as a mandatory part of your files. This is not yet an error.
+parsing_pass1/parsing_p_quotes_2.c: OK!
+Missing or invalid header. Header are being reintroduced as a mandatory part of your files. This is not yet an error.
+parsing_pass1/parsing_p_symbol.c: Error!
+Error: TOO_MANY_LINES       (line:  53, col:   1):	Function has more than 25 lines
+Missing or invalid header. Header are being reintroduced as a mandatory part of your files. This is not yet an error.
+parsing_pass1/parsing_pass1.h: OK!
+Missing or invalid header. Header are being reintroduced as a mandatory part of your files. This is not yet an error.
+parsing_pass2/parsing_p_p_par.c: Error!
+Error: CONSECUTIVE_SPC      (line:  33, col:   4):	Two or more consecutives spaces
+Error: SPACE_BEFORE_FUNC    (line:  33, col:   8):	space before function name
+Error: SPACE_EMPTY_LINE     (line:  35, col:   3):	Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  35, col:   3):	Comment is invalid in this scope
+Error: CONSECUTIVE_SPC      (line:  39, col:   5):	Two or more consecutives spaces
+Error: SPACE_BEFORE_FUNC    (line:  39, col:   8):	space before function name
+Error: TOO_FEW_TAB          (line:  41, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  41, col:   5):	Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  41, col:  17):	Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  43, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  43, col:   5):	Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  44, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  44, col:   5):	Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  49, col:   5):	Missing tabs for indent level
+Error: TOO_FEW_TAB          (line:  57, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  57, col:   5):	Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  58, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  58, col:   9):	Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  59, col:   1):	Missing tabs for indent level
+Error: TOO_FEW_TAB          (line:  68, col:   1):	Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  68, col:   5):	Space on empty line
+Error: TOO_FEW_TAB          (line:  69, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  69, col:   9):	Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  71, col:   1):	Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  71, col:   5):	Space on empty line
+Missing or invalid header. Header are being reintroduced as a mandatory part of your files. This is not yet an error.
+parsing_pass2/parsing_p_p_token.c: Error!
+Error: MISALIGNED_VAR_DECL  (line:   6, col:  13):	Misaligned variable declaration
+Error: MISALIGNED_VAR_DECL  (line:   7, col:  13):	Misaligned variable declaration
+Error: MISALIGNED_VAR_DECL  (line:   8, col:  13):	Misaligned variable declaration
+Error: SPACE_REPLACE_TAB    (line:  45, col:  14):	Found space when expecting tab
+Error: LINE_TOO_LONG        (line:  50, col:  91):	line too long
+Error: EOL_OPERATOR         (line:  54, col:  69):	Logic operator at the end of line
+Error: EOL_OPERATOR         (line:  55, col:  51):	Logic operator at the end of line
+Error: TOO_MANY_LINES       (line:  73, col:   1):	Function has more than 25 lines
+Error: WRONG_SCOPE_COMMENT  (line: 100, col:   5):	Comment is invalid in this scope
+Missing or invalid header. Header are being reintroduced as a mandatory part of your files. This is not yet an error.
+parsing_pass2/parsing_pass2.h: OK!

@@ -2,7 +2,7 @@
 
 int	split_len(char **split)
 {
-	int i;
+	register int	i;
 
 	i = 0;
 	if (!split)
@@ -12,10 +12,10 @@ int	split_len(char **split)
 	return (i);
 }
 
-char		**list_to_split(t_cut_cmd *target)
+char	**list_to_split(t_cut_cmd *target)
 {
-	char	**ret;
-	int		i;
+	char		**ret;
+	int			i;
 	t_cut_cmd	*count;
 
 	i = 0;
@@ -39,11 +39,9 @@ char		**list_to_split(t_cut_cmd *target)
 	return (ret);
 }
 
-char			*get_path(t_cut_cmd *cmd, char **paths)
+char	*get_path(t_cut_cmd *cmd, char **paths)
 {
 	int				i;
-	char			*str;
-	char			*tmp;
 	DIR				*o_dir;
 	struct dirent	*r_dir;
 
@@ -55,19 +53,12 @@ char			*get_path(t_cut_cmd *cmd, char **paths)
 		o_dir = opendir(paths[i]);
 		if (o_dir != NULL)
 		{
-			while ((r_dir = readdir(o_dir)) != NULL)
-			{
-				if (r_dir && (!ft_strncmp(cmd->elem, r_dir->d_name, (size_t)ft_strlen(r_dir->d_name))))
-				{
-					tmp = ft_strjoin(paths[i], "/");
-					str = ft_strjoin(tmp, cmd->elem);
-					if (!str)
-						return (NULL);
-					return (str);
-				}
-			}
-			if (o_dir)
-				closedir(o_dir);
+			while (ft_readdir(&r_dir, o_dir))
+				if (r_dir && (!ft_strncmp(cmd->elem,
+							r_dir->d_name,
+							(size_t)ft_strlen(r_dir->d_name))))
+					return (ft_strjoin(ft_strjoin(paths[i], "/"), cmd->elem));
+		    		closedir(o_dir);
 		}
 	}
 	return (NULL);

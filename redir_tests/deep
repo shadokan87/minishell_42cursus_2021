@@ -1,0 +1,1 @@
+((: whereis ls && whereis whereis: syntax error in expression (error token is "ls && whereis whereis")

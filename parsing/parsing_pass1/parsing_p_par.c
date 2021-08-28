@@ -1,10 +1,5 @@
 #include "../../includes/libshell.h"
 
-/*
-** (line:  27, col:  25):	Ternaries are forbidden
-** (line:  28, col:  26):	Ternaries are forbidden
-** (line:  32, col:   1):	Function has more than 25 lines
- */
 int	p_check_par(t_msh *msh, char *str)
 {
 	register int	count;

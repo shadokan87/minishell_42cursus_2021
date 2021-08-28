@@ -14,6 +14,7 @@ void	init_jobs(t_msh **msh)
 static	void	init_tools2(t_msh *msh)
 {
 	msh->tools->history_fd = -1;
+	msh->tools->flag_map = NULL;
 }
 
 /*where is tmp node ? */

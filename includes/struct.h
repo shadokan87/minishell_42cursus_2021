@@ -6,7 +6,7 @@
 /*   By: tidminta <tidminta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:33:58 by tidminta          #+#    #+#             */
-/*   Updated: 2021/08/18 03:12:04 by motoure          ###   ########.fr       */
+/*   Updated: 2021/08/24 01:32:34 by motoure          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,12 +83,11 @@ typedef struct s_env_list
 
 typedef struct s_tools
 {
-	//me
 	t_cut_cmd	*errors;
-	//me
 	t_cut_cmd	*head;
 	t_cut_cmd	*tail;
 	t_cut_cmd	*tmp_node;
+	t_cut_cmd	**flag_map;
 	int			b_stdout;
 	int			fdin;
 	int			fdout;

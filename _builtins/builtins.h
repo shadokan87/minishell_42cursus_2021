@@ -38,9 +38,13 @@ void	ft_open(int *ret, int fd);
 
 char	*flag(char *instr);
 
+void    flag_loop(char *loop);
+
 char	*flag_cmp(t_cut_cmd *flags, char *instr);
 
 void	print_list_msg(t_cut_cmd *print, char *message);
+
+int	ft_readdir(struct dirent **de, DIR *dr);
 
 t_cut_cmd	*ft_ls(char *path, char *options);
 #endif

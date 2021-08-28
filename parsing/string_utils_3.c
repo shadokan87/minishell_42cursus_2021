@@ -170,6 +170,8 @@ int	get_line(t_msh *msh, char *str)
 	if (msh->tools->status != 0)
 		curr_path = ft_strjoin(ft_strjoin(curr_path, ft_strjoin(ft_strjoin(ANSI_COLOR_FAILURE, " X "), ANSI_COLOR_RESET)), " ");
 	msh->jobs->reading_line = readline(curr_path);
+	if (!msh->jobs->reading_line)
+		handler(0);
 	if (is_same(ft_strtrim(msh->jobs->reading_line, "\n"), ""))
 	{
 		msh->tools->status = 0;

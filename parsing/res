@@ -1,0 +1,7 @@
+Missing or invalid header. Header are being reintroduced as a mandatory part of your files. This is not yet an error.
+string_utils_4.c: Error!
+Error: MISALIGNED_VAR_DECL  (line:  19, col:  17):	Misaligned variable declaration
+Error: TOO_MANY_TABS_FUNC   (line:  42, col:  13):	extra tabs before function name
+Error: LINE_TOO_LONG        (line:  57, col:  86):	line too long
+Error: TOO_FEW_TAB          (line:  58, col:   1):	Missing tabs for indent level
+Error: TOO_FEW_TAB          (line:  59, col:   1):	Missing tabs for indent level

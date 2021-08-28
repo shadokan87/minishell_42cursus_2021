@@ -6,13 +6,12 @@
 /*   By: motoure <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 22:32:13 by motoure           #+#    #+#             */
-/*   Updated: 2021/08/22 17:22:58 by motoure          ###   ########.fr       */
+/*   Updated: 2021/08/27 04:56:00 by motoure          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "./builtins.h"
 
-static int	ft_readdir(struct dirent **de, DIR *dr)
+int	ft_readdir(struct dirent **de, DIR *dr)
 {
 	*de = readdir(dr);
 	return ((*de != NULL));
@@ -33,8 +32,8 @@ char	*flag_cmp(t_cut_cmd *flags, char *instr)
 	cmp = flag(ft_strjoin("get ", split[0]));
 	if (cmp && is_same(op, "==") && is_same(cmp, split[2]))
 		return (cmp);
-	else if (cmp && is_same(op, "!=") && !is_same(cmp, split[2]))
-		return (cmp);
+	else if ((is_same(op, "!=") && !is_same(cmp, split[2])))
+		return (split[2]);
 	else if (cmp && is_same(op, "<") && ft_atoi(cmp) < ft_atoi(split[2]))
 		return (cmp);
 	else if (cmp && is_same(op, ">") && ft_atoi(cmp) > ft_atoi(split[2]))
@@ -46,12 +45,43 @@ char	*flag_cmp(t_cut_cmd *flags, char *instr)
 	return (NULL);
 }
 
+char    *flag_reroll(char *instr)
+{
+    char *reroll;
+    char **split;
+    int    i;
+
+    reroll = NULL;
+    split = ft_split(instr, '|');
+    i = 0;
+    if (!c_is_present(instr, '|'))
+        return (NULL);
+    printf("reroll\n");
+    return (NULL);
+}
+
+void    flag_loop(char *loop)
+{
+    int     i;
+    char    **split;
+
+    i = 0;
+    split = ft_split(loop, ':');
+    while (split[i])
+    {
+        flag(split[i]);
+        i++;
+    }
+}
+
 char	*flag(char *instr)
 {
 	static t_cut_cmd	*flags;
 	t_cut_cmd			*try;
 	char				*to_add;
 
+	if (is_same(instr, "NULL") && flags)
+		flags = NULL;
 	if (is_same(instr, "print"))
 		print_list_msg(flags, "\nFLAG");
 	if (is_same("status", instr))
@@ -71,7 +101,7 @@ char	*flag(char *instr)
 	}
 	else if (is_same(ft_split(instr, ' ')[0], "get"))
 		return (get_val_from_var(get_env_of(flags, to_add)));
-	return (NULL);
+	return (flag_reroll(instr));
 }
 
 void	print_list_msg(t_cut_cmd *print, char *message)
